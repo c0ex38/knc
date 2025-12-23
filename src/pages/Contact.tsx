@@ -1,23 +1,15 @@
 import './Contact.css';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
+import { contactInfo } from '../constants';
 
 const Contact = () => {
-    const contactInfo = {
-        location: "Fevzi Çakmak Mahallesi Matbaacılar Sitesi 10453. Sokak 16/B",
-        email: "info@kncdesign.com.tr",
-        whatsapp: "+90 552 636 01 42",
-        whatsappLink: "https://wa.me/905526360142",
-        instagram: "https://www.instagram.com/knccreative_",
-        instagramHandle: "@knccreative"
-    };
-
     return (
         <div className="contact-page">
-            <Helmet>
-                <title>İletişim | KNC CREATIVE</title>
-                <meta name="description" content="KNC Creative ile iletişime geçin. Email, WhatsApp ve Instagram üzerinden bize ulaşabilirsiniz." />
-                <link rel="canonical" href="https://knccreative.com/iletisim" />
-            </Helmet>
+            <SEO
+                title="İletişim"
+                description="KNC Creative ile iletişime geçin. Email, WhatsApp ve Instagram üzerinden bize ulaşabilirsiniz."
+                canonical="https://knccreative.com/iletisim"
+            />
 
             <div className="contact-page__container">
                 {/* Left Side - Content */}
