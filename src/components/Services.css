@@ -98,6 +98,21 @@
     }
 }
 
+/* Medium Screen SVG Text Scaling (1024px - 1599px) */
+@media (min-width: 1024px) and (max-width: 1599px) {
+    .services__divider text[font-size="20"] {
+        font-size: 18px !important;
+    }
+
+    .services__divider text[font-size="40"] {
+        font-size: 38px !important;
+    }
+
+    .services__divider text[font-size="150"] {
+        font-size: 130px !important;
+    }
+}
+
 /* Large Screen SVG Text Scaling */
 @media (min-width: 1600px) {
 
