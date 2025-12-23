@@ -44,7 +44,7 @@ const ServicesPage = () => {
             </Helmet>
 
             <div className="services-page__container">
-                <h1 className="services-page__title">Hizmetlerimiz</h1>
+                <h1 className="services-page__title">hizmetlerimiz</h1>
 
                 <div className="services-page__grid">
                     {services.map((service) => (
