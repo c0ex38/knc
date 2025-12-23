@@ -1,0 +1,239 @@
+:root {
+    /* Ana Renkler */
+    --color-orange: #ff2700;
+    --color-black: #111010;
+    --color-white: #F2F0EF;
+
+    /* Renk Varyasyonları */
+    --color-orange-light: #ff4d2b;
+    --color-orange-dark: #cc1f00;
+    --color-orange-alpha-10: rgba(255, 39, 0, 0.1);
+    --color-orange-alpha-20: rgba(255, 39, 0, 0.2);
+    --color-orange-alpha-50: rgba(255, 39, 0, 0.5);
+
+    --color-black-light: #1a1919;
+    --color-black-alpha-80: rgba(17, 16, 16, 0.8);
+    --color-black-alpha-90: rgba(17, 16, 16, 0.9);
+
+    --color-white-dark: #e5e3e2;
+    --color-white-alpha-10: rgba(242, 240, 239, 0.1);
+    --color-white-alpha-50: rgba(242, 240, 239, 0.5);
+    --color-white-alpha-90: rgba(242, 240, 239, 0.9);
+
+    /* Gri Tonları */
+    --color-gray-100: #2a2828;
+    --color-gray-200: #3d3b3b;
+    --color-gray-300: #504e4e;
+    --color-gray-400: #636161;
+    --color-gray-500: #767474;
+    --color-gray-600: #8a8888;
+    --color-gray-700: #9d9b9b;
+    --color-gray-800: #b0aeae;
+    --color-gray-900: #c3c2c2;
+
+    /* Tipografi */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-lg: 1.125rem;
+    /* 18px */
+    --font-size-xl: 1.25rem;
+    /* 20px */
+    --font-size-2xl: 1.5rem;
+    /* 24px */
+    --font-size-3xl: 1.875rem;
+    /* 30px */
+    --font-size-4xl: 2.25rem;
+    /* 36px */
+    --font-size-5xl: 3rem;
+    /* 48px */
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    /* 4px */
+    --spacing-sm: 0.5rem;
+    /* 8px */
+    --spacing-md: 1rem;
+    /* 16px */
+    --spacing-lg: 1.5rem;
+    /* 24px */
+    --spacing-xl: 2rem;
+    /* 32px */
+    --spacing-2xl: 3rem;
+    /* 48px */
+    --spacing-3xl: 4rem;
+    /* 64px */
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    /* 4px */
+    --radius-md: 0.5rem;
+    /* 8px */
+    --radius-lg: 0.75rem;
+    /* 12px */
+    --radius-xl: 1rem;
+    /* 16px */
+    --radius-2xl: 1.5rem;
+    /* 24px */
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(17, 16, 16, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(17, 16, 16, 0.1), 0 2px 4px -1px rgba(17, 16, 16, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(17, 16, 16, 0.1), 0 4px 6px -2px rgba(17, 16, 16, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(17, 16, 16, 0.1), 0 10px 10px -5px rgba(17, 16, 16, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(17, 16, 16, 0.25);
+    --shadow-orange: 0 0 20px rgba(255, 39, 0, 0.3);
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+
+    /* Z-Index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-white);
+    background-color: var(--color-black);
+    overflow-x: hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-black-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gray-400);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+}
+
+/* Selection */
+::selection {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+::-moz-selection {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+/* Links */
+a {
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-orange-light);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-white);
+}
+
+h1 {
+    font-size: var(--font-size-5xl);
+}
+
+h2 {
+    font-size: var(--font-size-4xl);
+}
+
+h3 {
+    font-size: var(--font-size-3xl);
+}
+
+h4 {
+    font-size: var(--font-size-2xl);
+}
+
+h5 {
+    font-size: var(--font-size-xl);
+}
+
+h6 {
+    font-size: var(--font-size-lg);
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Focus Styles */
+*:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+}

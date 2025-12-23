@@ -1,0 +1,132 @@
+.services {
+    position: relative;
+    min-height: auto;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    background: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services__container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Header */
+.services__header {
+    text-align: left;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.services__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.services__subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-white-alpha-90);
+    font-weight: var(--font-weight-medium);
+    max-width: 600px;
+    margin: var(--spacing-lg) 0 0;
+}
+
+/* Wavy Divider */
+.services__divider {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: var(--spacing-2xl) auto 0;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services__divider {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .services__header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .services__divider {
+        max-width: 600px;
+    }
+
+    .services__title {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .services__divider {
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .services__title {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+
+    .services__subtitle {
+        font-size: clamp(0.875rem, 4vw, 1rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .services {
+        padding: var(--spacing-lg) var(--spacing-xs);
+    }
+
+    .services__divider {
+        max-width: 100%;
+    }
+}
+
+/* Mobile SVG Text Scaling */
+@media (max-width: 768px) {
+    .services__divider text {
+        font-size: 12px !important;
+    }
+
+    /* Scale down the number background */
+    .services__divider text[font-size="150"] {
+        font-size: 80px !important;
+    }
+
+    /* Scale down the title */
+    .services__divider text[font-size="40"] {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .services__divider text {
+        font-size: 10px !important;
+    }
+
+    /* Scale down the number background */
+    .services__divider text[font-size="150"] {
+        font-size: 60px !important;
+    }
+
+    /* Scale down the title */
+    .services__divider text[font-size="40"] {
+        font-size: 18px !important;
+    }
+}
