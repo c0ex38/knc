@@ -126,9 +126,11 @@
     color: var(--color-white);
 }
 
-.contact-card__icon svg {
+.contact-card__icon svg,
+.contact-card__icon i {
     width: clamp(2rem, 4vw, 2.5rem);
     height: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .contact-card:hover .contact-card__icon {
