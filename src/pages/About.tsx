@@ -1,8 +1,14 @@
 import './About.css';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
     return (
         <div className="about-page">
+            <Helmet>
+                <title>Hakkımızda | KNC CREATIVE</title>
+                <meta name="description" content="Bakan çok, gören az. Biz göreniz. KNC Creative'in vizyonu ve misyonu hakkında detaylı bilgi." />
+                <link rel="canonical" href="https://knccreative.com/hakkimizda" />
+            </Helmet>
             <div className="about-page__container">
                 <h1 className="about-page__title">
                     Bakan çok, gören az.<br />

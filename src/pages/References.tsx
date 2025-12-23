@@ -1,4 +1,5 @@
 import './References.css';
+import { Helmet } from 'react-helmet-async';
 
 const references = [
     { id: 1, name: 'acente42', title: 'sigorta', image: '/referans_logos/acente.svg' },
@@ -12,6 +13,11 @@ const references = [
 const References = () => {
     return (
         <div className="references-page">
+            <Helmet>
+                <title>Referanslarımız | KNC CREATIVE</title>
+                <meta name="description" content="KNC Creative referansları ve iş ortakları. Birlikte çalıştığımız markalardan bazıları." />
+                <link rel="canonical" href="https://knccreative.com/referanslar" />
+            </Helmet>
             <div className="references-page__container">
                 <h1 className="references-page__title">referanslarımız</h1>
                 <div className="references-page__grid">
