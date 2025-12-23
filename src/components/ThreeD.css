@@ -12,7 +12,7 @@
     position: sticky;
     top: 0;
     height: 100vh;
-    max-width: 1280px;
+    max-width: 1600px;
     width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
@@ -35,7 +35,7 @@
 }
 
 .threed__big-text {
-    font-size: clamp(200px, 25vw, 400px);
+    font-size: clamp(200px, 25vw, 500px);
     font-weight: var(--font-weight-bold);
     color: var(--color-white);
     letter-spacing: 0.05em;
@@ -64,14 +64,14 @@
 }
 
 .threed__title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 6rem);
     font-weight: var(--font-weight-bold);
     color: var(--color-white);
     margin-bottom: var(--spacing-lg);
 }
 
 .threed__description {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.75rem);
     color: var(--color-white-alpha-90);
     font-weight: var(--font-weight-medium);
     line-height: 1.6;
@@ -85,7 +85,7 @@
 }
 
 .threed__features li {
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     color: var(--color-white);
     font-weight: var(--font-weight-medium);
     padding: var(--spacing-sm) 0;

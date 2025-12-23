@@ -8,13 +8,13 @@
 }
 
 .references-page__container {
-    max-width: 1200px;
+    max-width: 1600px;
     padding: 0 var(--spacing-xl);
     width: 100%;
 }
 
 .references-page__title {
-    font-size: 4.5rem;
+    font-size: clamp(2.5rem, 5vw, 6rem);
     font-weight: 900;
     margin-bottom: var(--spacing-3xl);
     color: var(--color-white);

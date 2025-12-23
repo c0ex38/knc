@@ -105,8 +105,8 @@ const ThreeD = () => {
             mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
             mouseY = ((event.clientY - rect.top) / rect.height) * 2 - 1;
 
-            targetRotationY = mouseX * Math.PI;
-            targetRotationX = mouseY * Math.PI;
+            targetRotationY = mouseX * 0.4;
+            targetRotationX = mouseY * 0.4;
         };
 
         canvasRef.current.addEventListener('mousemove', handleMouseMove);

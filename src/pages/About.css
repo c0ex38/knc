@@ -11,14 +11,14 @@
 }
 
 .about-page__container {
-    max-width: 900px;
+    max-width: 1400px;
     padding: 0 var(--spacing-xl);
     width: 100%;
 }
 
 .about-page__title {
-    font-size: 4.5rem;
-    /* Large headline */
+    font-size: clamp(2.5rem, 5vw, 6rem);
+    /* Large headline scaling */
     line-height: 1.1;
     margin-bottom: var(--spacing-2xl);
     color: var(--color-white);
@@ -57,8 +57,8 @@
     flex-direction: column;
     gap: var(--spacing-xl);
     line-height: 1.6;
-    font-size: 1.25rem;
-    /* Slightly larger text */
+    font-size: clamp(1rem, 1.25vw, 1.75rem);
+    /* Fluid scaling for text */
     color: #cccccc;
     /* Softer white for reading */
     font-weight: 300;
