@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Logo from './Logo';
 
@@ -16,13 +17,13 @@ const Navbar = () => {
     }, []);
 
     const leftNavItems = [
-        { label: 'Hakkımızda', href: '#about' },
-        { label: 'Hizmetler', href: '#services' },
+        { label: 'Hakkımızda', path: '/hakkimizda' },
+        { label: 'Hizmetler', path: '/#services' },
     ];
 
     const rightNavItems = [
-        { label: 'Referanslar', href: '#references' },
-        { label: 'İletişim', href: '#contact' },
+        { label: 'Referanslar', path: '/referanslar' },
+        { label: 'İletişim', path: '/#contact' },
     ];
 
     const allNavItems = [...leftNavItems, ...rightNavItems];
@@ -34,33 +35,33 @@ const Navbar = () => {
                 <ul className="navbar__menu navbar__menu--left">
                     {leftNavItems.map((item, index) => (
                         <li key={index} className="navbar__menu-item">
-                            <a
-                                href={item.href}
+                            <Link
+                                to={item.path}
                                 className="navbar__menu-link"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
 
                 {/* Logo */}
-                <a href="#home" className="navbar__logo">
+                <Link to="/" className="navbar__logo">
                     <Logo />
-                </a>
+                </Link>
 
                 {/* Right Navigation */}
                 <ul className="navbar__menu navbar__menu--right">
                     {rightNavItems.map((item, index) => (
                         <li key={index} className="navbar__menu-item">
-                            <a
-                                href={item.href}
+                            <Link
+                                to={item.path}
                                 className="navbar__menu-link"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -82,13 +83,13 @@ const Navbar = () => {
                 <ul className="navbar__mobile-menu">
                     {allNavItems.map((item, index) => (
                         <li key={index} className="navbar__mobile-item">
-                            <a
-                                href={item.href}
+                            <Link
+                                to={item.path}
                                 className="navbar__mobile-link"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

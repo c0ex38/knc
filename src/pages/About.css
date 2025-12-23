@@ -1,0 +1,81 @@
+.about-page {
+    /* Navbar height offset plus some breathing room */
+    padding-top: 150px;
+    min-height: 100vh;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    /* Aligns content more towards the top-center given the mockup */
+    align-items: flex-start;
+}
+
+.about-page__container {
+    max-width: 900px;
+    padding: 0 var(--spacing-xl);
+    width: 100%;
+}
+
+.about-page__title {
+    font-size: 4.5rem;
+    /* Large headline */
+    line-height: 1.1;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-white);
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+/* Divider Section */
+.about-page__divider {
+    display: flex;
+    gap: 8px;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.about-page__circle-icon {
+    width: 24px;
+    height: 24px;
+    border: 4px solid #ff3300;
+    /* Bright red-orange */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page__circle-inner {
+    width: 6px;
+    height: 6px;
+    background-color: #ff3300;
+    border-radius: 50%;
+}
+
+/* Content Text */
+.about-page__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    line-height: 1.6;
+    font-size: 1.25rem;
+    /* Slightly larger text */
+    color: #cccccc;
+    /* Softer white for reading */
+    font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-page {
+        padding-top: 120px;
+    }
+
+    .about-page__title {
+        font-size: 2.5rem;
+    }
+
+    .about-page__divider {
+        flex-wrap: wrap;
+        /* Allow wrapping on very small screens if needed */
+    }
+}

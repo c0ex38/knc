@@ -1,20 +1,20 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import ThreeD from './components/ThreeD'
-import Marquee from './components/Marquee'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import About from './pages/About'
+import References from './pages/References'
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Services />
-      <ThreeD />
-      <Marquee />
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hakkimizda" element={<About />} />
+        <Route path="/referanslar" element={<References />} />
+      </Routes>
+    </Layout>
   )
 }
 
