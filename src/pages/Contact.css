@@ -120,6 +120,15 @@
     margin-bottom: var(--spacing-sm);
     filter: grayscale(100%);
     transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.contact-card__icon svg {
+    width: clamp(2rem, 4vw, 2.5rem);
+    height: clamp(2rem, 4vw, 2.5rem);
 }
 
 .contact-card:hover .contact-card__icon {
