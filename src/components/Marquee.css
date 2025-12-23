@@ -31,7 +31,8 @@
 }
 
 .stripe-pattern-white {
-    animation: scrollPatternReverse 3s linear infinite;
+    animation: scrollPatternReverse 8s linear infinite;
+    will-change: transform;
 }
 
 .marquee__stripe {
@@ -47,7 +48,8 @@
 }
 
 .stripe-pattern {
-    animation: scrollPattern 3s linear infinite;
+    animation: scrollPattern 8s linear infinite;
+    will-change: transform;
 }
 
 @keyframes scrollPattern {
@@ -56,7 +58,7 @@
     }
 
     100% {
-        transform: translateX(-60px);
+        transform: translateX(-240px);
     }
 }
 
@@ -66,7 +68,7 @@
     }
 
     100% {
-        transform: translateX(60px);
+        transform: translateX(240px);
     }
 }
 
