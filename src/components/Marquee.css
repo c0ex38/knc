@@ -31,7 +31,7 @@
 }
 
 .stripe-pattern-white {
-    animation: scrollPatternReverse 8s linear infinite;
+    animation: scrollPatternReverse 15s linear infinite;
     will-change: transform;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .stripe-pattern {
-    animation: scrollPattern 8s linear infinite;
+    animation: scrollPattern 15s linear infinite;
     will-change: transform;
 }
 
