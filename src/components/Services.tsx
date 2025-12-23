@@ -88,7 +88,7 @@ const Services = () => {
 const servicesData = [
     {
         number: "01",
-        title: "grafik Tasarım",
+        title: "grafik tasarım",
         desc1: "Logo, broşür, afiş, katalog gibi tüm basılı ve dijital",
         desc2: "materyallerle kurumsal kimliğinizi profesyonelce yansıtırız.",
         x: 700,
@@ -159,7 +159,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fillOpacity="0.3"
                 fontSize="150"
                 fontWeight="bold"
-                fontFamily="Arial, sans-serif"
+                fontFamily="Benz Grotesk, Arial, sans-serif"
                 textAnchor={isRight ? "start" : "end"}
             >
                 {number}
@@ -172,7 +172,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fill="#fff"
                 fontSize="40"
                 fontWeight="bold"
-                fontFamily="Arial, sans-serif"
+                fontFamily="Benz Grotesk, Arial, sans-serif"
                 textAnchor={isRight ? "end" : "start"}
             >
                 {title}
@@ -186,7 +186,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fillOpacity="0.7"
                 fontSize="20"
                 fontWeight="bold"
-                fontFamily="Arial, sans-serif"
+                fontFamily="Montserrat, Arial, sans-serif"
                 textAnchor={isRight ? "end" : "start"}
             >
                 {desc1}
@@ -200,7 +200,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fillOpacity="0.7"
                 fontSize="20"
                 fontWeight="bold"
-                fontFamily="Arial, sans-serif"
+                fontFamily="Montserrat, Arial, sans-serif"
                 textAnchor={isRight ? "end" : "start"}
             >
                 {desc2}
@@ -215,7 +215,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                     fillOpacity="0.7"
                     fontSize="20"
                     fontWeight="bold"
-                    fontFamily="Arial, sans-serif"
+                    fontFamily="Montserrat, Arial, sans-serif"
                     textAnchor={isRight ? "end" : "start"}
                 >
                     {desc3}

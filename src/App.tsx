@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import References from './pages/References'
 import ServicesPage from './pages/ServicesPage'
+import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/hakkimizda" element={<About />} />
         <Route path="/hizmetlerimiz" element={<ServicesPage />} />
         <Route path="/referanslar" element={<References />} />
+        <Route path="/iletisim" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

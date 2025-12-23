@@ -17,13 +17,13 @@ const Navbar = () => {
     }, []);
 
     const leftNavItems = [
-        { label: 'Hakkımızda', path: '/hakkimizda' },
-        { label: 'Hizmetler', path: '/hizmetlerimiz' },
+        { label: 'hakkımızda', path: '/hakkimizda' },
+        { label: 'hizmetler', path: '/hizmetlerimiz' },
     ];
 
     const rightNavItems = [
-        { label: 'Referanslar', path: '/referanslar' },
-        { label: 'İletişim', path: '/#contact' },
+        { label: 'referanslar', path: '/referanslar' },
+        { label: 'iletişim', path: '/iletisim' },
     ];
 
     const allNavItems = [...leftNavItems, ...rightNavItems];
