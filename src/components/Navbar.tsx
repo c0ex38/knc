@@ -18,7 +18,7 @@ const Navbar = () => {
 
     const leftNavItems = [
         { label: 'Hakkımızda', path: '/hakkimizda' },
-        { label: 'Hizmetler', path: '/#services' },
+        { label: 'Hizmetler', path: '/hizmetlerimiz' },
     ];
 
     const rightNavItems = [

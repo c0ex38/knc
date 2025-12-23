@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import References from './pages/References'
+import ServicesPage from './pages/ServicesPage'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<About />} />
+        <Route path="/hizmetlerimiz" element={<ServicesPage />} />
         <Route path="/referanslar" element={<References />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

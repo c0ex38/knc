@@ -194,13 +194,13 @@
     }
 
     .hero__content {
-        top: 22%;
+        top: 28%;
         width: 92%;
         padding: 0 var(--spacing-md);
     }
 
     .hero__circle {
-        width: 180%;
+        width: 280%;
         max-width: none;
         border-width: 3px;
     }
