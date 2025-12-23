@@ -48,7 +48,6 @@ const Contact = () => {
                                 <i className="fa-brands fa-instagram"></i>
                             </div>
                             <h3 className="contact-card__title">Instagram</h3>
-                            <p className="contact-card__text">{contactInfo.instagramHandle}</p>
                         </a>
 
                         {/* Location */}
@@ -65,7 +64,6 @@ const Contact = () => {
                                 </svg>
                             </div>
                             <h3 className="contact-card__title">Konum</h3>
-                            <p className="contact-card__text">{contactInfo.location}</p>
                         </a>
 
                         {/* WhatsApp */}
@@ -79,7 +77,6 @@ const Contact = () => {
                                 <i className="fa-brands fa-whatsapp"></i>
                             </div>
                             <h3 className="contact-card__title">WhatsApp</h3>
-                            <p className="contact-card__text">{contactInfo.whatsapp}</p>
                         </a>
                     </div>
                 </div>
