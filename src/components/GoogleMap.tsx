@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Logo';
 
 const GoogleMap: React.FC = () => {
     const containerStyle: React.CSSProperties = {
@@ -12,6 +13,7 @@ const GoogleMap: React.FC = () => {
         border: 0,
         width: '100%',
         height: '100%',
+        filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)',
     };
 
     const markerContainerStyle: React.CSSProperties = {
@@ -27,27 +29,22 @@ const GoogleMap: React.FC = () => {
     };
 
     const markerCardStyle: React.CSSProperties = {
-        backgroundColor: 'white',
+        backgroundColor: '#ff2700',
         borderRadius: '12px',
         padding: '16px 20px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 1)',
         marginBottom: '8px',
         display: 'flex',
         alignItems: 'center',
         gap: '12px',
     };
 
-    const logoStyle: React.CSSProperties = {
-        width: '40px',
-        height: '40px',
-        borderRadius: '8px',
-        backgroundColor: '#1a1a1a',
+    const logoContainerStyle: React.CSSProperties = {
+        width: '50px',
+        height: '50px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontWeight: 'bold',
-        color: 'white',
-        fontSize: '16px',
     };
 
     const textStyle: React.CSSProperties = {
@@ -89,8 +86,8 @@ const GoogleMap: React.FC = () => {
             {/* Custom Marker Overlay */}
             <div style={markerContainerStyle}>
                 <div style={markerCardStyle}>
-                    <div style={logoStyle}>
-                        KNC
+                    <div style={logoContainerStyle}>
+                        <Logo />
                     </div>
                     <div style={textStyle}>
                         KNC CREATIVE
