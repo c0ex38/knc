@@ -220,11 +220,11 @@ const ThreeD = () => {
         maxWidth: '1600px',
         width: '100%',
         margin: '0 auto',
-        padding: '0 2rem',
+        padding: '15vh 2rem 0', // Added top padding, removed vertical centering gap
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: '8rem',
-        alignItems: 'center',
+        alignItems: 'start', // Changed from center to start
     };
 
     const contentStyle: CSSProperties = {

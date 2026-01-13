@@ -17,7 +17,7 @@ const Marquee = () => {
 
     const containerStyle: CSSProperties = {
         width: '100%',
-        minHeight: '20vh',
+        minHeight: '12vh', // Reduced from 20vh
         textAlign: 'center',
         overflow: 'hidden',
         display: 'flex',
@@ -42,10 +42,10 @@ const Marquee = () => {
         width: '100vw',
         height: '50px',
         backgroundColor: '#FF2700', // Turuncu arka plan
-        marginBottom: '2rem',
-        position: 'relative',
+        position: 'absolute',
+        top: '50%',
         left: '50%',
-        transform: 'translateX(-50%) skewY(2deg)',
+        transform: 'translateX(-50%) translateY(-50%) skewY(2deg)',
         zIndex: 2,
         overflow: 'hidden',
     };
