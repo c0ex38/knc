@@ -30,7 +30,7 @@ const Services = () => {
             // Start when header hits top of viewport
             // Progress from 0 (header at top) to 1 (section fully scrolled)
             const scrollStart = Math.max(0, -headerTop);
-            const scrollProgress = Math.min(1, scrollStart / (sectionHeight * 0.6)); // 0.6 for faster completion
+            const scrollProgress = Math.min(1, scrollStart / (sectionHeight * 0.8)); // 0.6 for faster completion
 
             const drawLength = pathLength * scrollProgress;
 
@@ -255,7 +255,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fillOpacity="0.3"
                 fontSize="150"
                 fontWeight="300"
-                fontFamily="Benz Grotesk, Arial, sans-serif"
+                style={{ fontFamily: 'var(--font-family-heading)' }}
                 textAnchor={isRight ? "start" : "end"}
             >
                 {number}
@@ -268,7 +268,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fill="#fff"
                 fontSize="40"
                 fontWeight="400"
-                fontFamily="Benz Grotesk, Arial, sans-serif"
+                style={{ fontFamily: 'var(--font-family-heading)' }}
                 textAnchor={isRight ? "end" : "start"}
             >
                 {title}
@@ -282,7 +282,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fillOpacity="0.7"
                 fontSize="20"
                 fontWeight="300"
-                fontFamily="Montserrat, Arial, sans-serif"
+                style={{ fontFamily: 'var(--font-family-base)' }}
                 textAnchor={isRight ? "end" : "start"}
             >
                 {desc1}
@@ -296,7 +296,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fillOpacity="0.7"
                 fontSize="20"
                 fontWeight="300"
-                fontFamily="Montserrat, Arial, sans-serif"
+                style={{ fontFamily: 'var(--font-family-base)' }}
                 textAnchor={isRight ? "end" : "start"}
             >
                 {desc2}
@@ -311,7 +311,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                     fillOpacity="0.7"
                     fontSize="20"
                     fontWeight="300"
-                    fontFamily="Montserrat, Arial, sans-serif"
+                    style={{ fontFamily: 'var(--font-family-base)' }}
                     textAnchor={isRight ? "end" : "start"}
                 >
                     {desc3}

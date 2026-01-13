@@ -231,9 +231,9 @@ const ThreeD = () => {
         paddingRight: '0',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center', // Centered horizontally
+        alignItems: 'flex-start',
         justifyContent: 'center', // Vertically centered in its column
-        textAlign: 'center',
+        textAlign: 'left',
     };
 
     const bigTextStyle: CSSProperties = {
@@ -244,7 +244,7 @@ const ThreeD = () => {
         display: 'flex',
         alignItems: 'center',
         lineHeight: 0.8,
-        fontFamily: 'Inter, sans-serif',
+        fontFamily: 'var(--font-family-heading)',
     };
 
     const subTitleStyle: CSSProperties = {
@@ -333,6 +333,7 @@ const ThreeD = () => {
                         [data-threed-content] {
                             padding-right: 0 !important;
                             text-align: center;
+                            align-items: center !important;
                         }
                         [data-threed-canvas] {
                             height: 500px !important;

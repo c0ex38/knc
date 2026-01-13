@@ -71,7 +71,7 @@ const ContactCTA = () => {
                     transform: 'translateY(-50%)',
                     whiteSpace: 'nowrap',
                     opacity: 0.04,
-                    fontFamily: 'Benz Grotesk, sans-serif',
+                    fontFamily: 'var(--font-family-heading)',
                     fontSize: '30vw',
                     fontWeight: 900,
                     lineHeight: 1,
@@ -114,7 +114,7 @@ const ContactCTA = () => {
                             <span className="text-gradient-premium">HAYATA GEÇİRELİM</span>
                         </h2>
                         <p style={{
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'var(--font-family-base)',
                             fontSize: 'clamp(18px, 1.5vw, 22px)',
                             color: '#b0b0b0',
                             fontWeight: 300,
@@ -142,7 +142,7 @@ const ContactCTA = () => {
                         <span 
                             className="cta-text"
                             style={{
-                                fontFamily: 'Benz Grotesk, sans-serif',
+                                fontFamily: 'var(--font-family-heading)',
                                 fontSize: '1.5rem',
                                 fontWeight: 700,
                                 color: '#fff',
