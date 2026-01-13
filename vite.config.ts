@@ -11,6 +11,20 @@ export default defineConfig({
       png: { quality: 80 },
       jpeg: { quality: 80 },
       jpg: { quality: 80 },
+      svg: {
+        multipass: true,
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                cleanupIds: false,
+                removeViewBox: false,
+              },
+            },
+          },
+        ],
+      },
     }),
     Sitemap({
       hostname: 'https://knccreative.com',

@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Loading from './components/Loading';
 import ErrorBoundary from './components/ErrorBoundary';
 import PageTransition from './components/PageTransition';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -17,22 +18,26 @@ function App() {
   const location = useLocation();
 
   return (
-    <Layout>
-      <ErrorBoundary>
-        <Suspense fallback={<Loading />}>
-          <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-              <Route path="/hakkimizda" element={<PageTransition><About /></PageTransition>} />
-              <Route path="/hizmetlerimiz" element={<PageTransition><ServicesPage /></PageTransition>} />
-              <Route path="/referanslar" element={<PageTransition><References /></PageTransition>} />
-              <Route path="/iletisim" element={<PageTransition><Contact /></PageTransition>} />
-              <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-            </Routes>
-          </AnimatePresence>
-        </Suspense>
-      </ErrorBoundary>
-    </Layout>
+    <>
+      <SpeedInsights />
+      <Layout>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+                <Route path="/hakkimizda" element={<PageTransition><About /></PageTransition>} />
+                <Route path="/hizmetlerimiz" element={<PageTransition><ServicesPage /></PageTransition>} />
+                <Route path="/referanslar" element={<PageTransition><References /></PageTransition>} />
+                <Route path="/iletisim" element={<PageTransition><Contact /></PageTransition>} />
+                <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+              </Routes>
+            </AnimatePresence>
+          </Suspense>
+        </ErrorBoundary>
+      </Layout>
+    </>
+
   );
 }
 
