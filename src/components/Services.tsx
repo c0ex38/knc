@@ -1,4 +1,5 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
+import { servicesData } from '../constants';
 
 /**
  * Services Bileşeni
@@ -66,16 +67,16 @@ const Services = () => {
     };
 
     const titleStyle: CSSProperties = {
-        fontSize: 'clamp(2.5rem, 5vw, 6rem)',
-        fontWeight: 700,
+        fontSize: 'clamp(2rem, 4.5vw, 4.5rem)', // Küçültüldü: 6rem -> 4.5rem
+        fontWeight: 400,
         color: '#FFFFFF',
         marginBottom: '1.5rem',
     };
 
     const subtitleStyle: CSSProperties = {
-        fontSize: 'clamp(1rem, 2vw, 1.75rem)',
+        fontSize: 'clamp(0.95rem, 1.5vw, 1.35rem)', // Küçültüldü: 1.75rem -> 1.35rem
         color: 'rgba(255, 255, 255, 0.9)',
-        fontWeight: 500,
+        fontWeight: 300,
         maxWidth: '800px',
         margin: '2rem 0 0',
     };
@@ -239,64 +240,6 @@ const Services = () => {
     );
 };
 
-const servicesData = [
-    {
-        number: "01",
-        title: "grafik tasarım",
-        desc1: "Logo, broşür, afiş, katalog gibi tüm basılı ve dijital",
-        desc2: "materyallerle kurumsal kimliğinizi profesyonelce yansıtırız.",
-        x: 700,
-        y: -1400,
-        align: "right"
-    },
-    {
-        number: "02",
-        title: "video prodüksiyon",
-        desc1: "Reklam filmleri, tanıtım videoları, backstage çekimleri ve",
-        desc2: "etkileyici kurgular ile markanızı dinamik anlatıyoruz.",
-        x: 500,
-        y: -1000,
-        align: "left"
-    },
-    {
-        number: "03",
-        title: "kurumsal kimlik",
-        desc1: "Markanızın temek değerleriyle uyumlu, renk paletinizden",
-        desc2: "yazı karakterlerinize kadar bütüncül bir kurumsal kimlik oluşturuyoruz.",
-        x: 700,
-        y: -600,
-        align: "right"
-    },
-    {
-        number: "04",
-        title: "sosyal medya",
-        desc1: "Oluşturduğumuz kimliği dijital dünyada da taşıyarak, Instagram,",
-        desc2: "Linkedin ve diper platformlara özel stratejik içerikler, gönderiler,",
-        desc3: "reels videoları ve sayfa yönetimiyle görünürlüğünüzü güçlendiriyoruz.",
-        x: 500,
-        y: -200,
-        align: "left"
-    },
-    {
-        number: "05",
-        title: "web tasarım",
-        desc1: "Benzersiz ve akılda kalıcı bir web sitesi oluşturuyoruz. Kalıplaşmış",
-        desc2: "şablon web siteleri değil, yalnızca markanıza uygun, özel web siteleri oluşturuyoruz.",
-        x: 700,
-        y: 200,
-        align: "right"
-    },
-    {
-        number: "06",
-        title: "promosyon ve iş elbiseleri",
-        desc1: "Flaş reklam ortaklığıyla, 40 yıllık deneyimi markanıza yansıtıyoruz.",
-        desc2: "Tasarım ve baskı süreci tek elden yönetilen iş elbiseleri ve promosyon",
-        desc3: "ürünleriyle, markanızı sahada da tutarlı ve profesyonel şekilde temsil ediyoruz.",
-        x: 500,
-        y: 600,
-        align: "left"
-    },
-];
 
 // Helper component for SVG text group
 const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right" }: { number: string, title: string, desc1: string, desc2: string, desc3?: string, x: number, y: number, align?: "left" | "right" }) => {
@@ -311,7 +254,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fill="#fff"
                 fillOpacity="0.3"
                 fontSize="150"
-                fontWeight="bold"
+                fontWeight="300"
                 fontFamily="Benz Grotesk, Arial, sans-serif"
                 textAnchor={isRight ? "start" : "end"}
             >
@@ -324,7 +267,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 y="-50"
                 fill="#fff"
                 fontSize="40"
-                fontWeight="bold"
+                fontWeight="400"
                 fontFamily="Benz Grotesk, Arial, sans-serif"
                 textAnchor={isRight ? "end" : "start"}
             >
@@ -338,7 +281,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fill="#fff"
                 fillOpacity="0.7"
                 fontSize="20"
-                fontWeight="bold"
+                fontWeight="300"
                 fontFamily="Montserrat, Arial, sans-serif"
                 textAnchor={isRight ? "end" : "start"}
             >
@@ -352,7 +295,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                 fill="#fff"
                 fillOpacity="0.7"
                 fontSize="20"
-                fontWeight="bold"
+                fontWeight="300"
                 fontFamily="Montserrat, Arial, sans-serif"
                 textAnchor={isRight ? "end" : "start"}
             >
@@ -367,7 +310,7 @@ const ServiceItem = ({ number, title, desc1, desc2, desc3, x, y, align = "right"
                     fill="#fff"
                     fillOpacity="0.7"
                     fontSize="20"
-                    fontWeight="bold"
+                    fontWeight="300"
                     fontFamily="Montserrat, Arial, sans-serif"
                     textAnchor={isRight ? "end" : "start"}
                 >

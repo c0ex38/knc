@@ -36,25 +36,25 @@ const Contact = () => {
     };
 
     const titleStyle: CSSProperties = {
-        fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-        fontWeight: 900,
+        fontSize: 'clamp(2rem, 5vw, 4rem)', // Küçültüldü: 5rem -> 4rem
+        fontWeight: 400, // 900 -> 400
         marginBottom: '1.5rem',
         color: '#FFFFFF',
-        letterSpacing: '-3px',
+        letterSpacing: '-1px', // -3px -> -1px
         lineHeight: 1,
     };
 
     const subtitleStyle: CSSProperties = {
-        fontSize: 'clamp(0.95rem, 1.5vw, 1.25rem)',
+        fontSize: 'clamp(0.875rem, 1.25vw, 1.125rem)', // Küçültüldü: 1.25rem -> 1.125rem
         color: 'rgba(255, 255, 255, 0.9)',
         marginBottom: '4rem',
-        fontWeight: 400,
+        fontWeight: 300, // 400 -> 300
     };
 
     const emailStyle: CSSProperties = {
         display: 'inline-block',
-        fontSize: 'clamp(1.25rem, 3vw, 2.25rem)',
-        fontWeight: 700,
+        fontSize: 'clamp(1rem, 2.5vw, 1.75rem)', // Küçültüldü: 2.25rem -> 1.75rem
+        fontWeight: 500, // 700 -> 500
         color: '#FF2700',
         textDecoration: 'none',
         marginBottom: '4rem',
@@ -104,12 +104,6 @@ const Contact = () => {
         fontWeight: 700,
         marginBottom: '0.5rem',
         color: '#FFFFFF',
-    };
-
-    const cardTextStyle: CSSProperties = {
-        fontSize: 'clamp(0.75rem, 1.2vw, 0.95rem)',
-        color: 'rgba(255, 255, 255, 0.9)',
-        lineHeight: 1.4,
     };
 
     const videoContainerStyle: CSSProperties = {

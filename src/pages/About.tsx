@@ -34,12 +34,12 @@ const About = () => {
     };
 
     const titleStyle: CSSProperties = {
-        fontSize: 'clamp(2.5rem, 5vw, 6rem)',
+        fontSize: 'clamp(2rem, 4vw, 4.5rem)', // Küçültüldü: 6rem -> 4.5rem
         lineHeight: 1.1,
         marginBottom: '4rem',
         color: '#FFFFFF',
-        fontWeight: 900,
-        letterSpacing: '-2px',
+        fontWeight: 400, // 900 -> 400
+        letterSpacing: '-1px', // -2px -> -1px
     };
 
     const dividerStyle: CSSProperties = {
@@ -70,7 +70,7 @@ const About = () => {
         flexDirection: 'column',
         gap: '3rem',
         lineHeight: 1.6,
-        fontSize: 'clamp(1rem, 1.25vw, 1.75rem)',
+        fontSize: 'clamp(0.95rem, 1.1vw, 1.35rem)', // Küçültüldü: 1.75rem -> 1.35rem
         color: '#CCCCCC',
         fontWeight: 300,
     };

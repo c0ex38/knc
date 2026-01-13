@@ -109,7 +109,7 @@ const Hero = () => {
 
     // Başlık stili
     const titleStyle: CSSProperties = {
-        fontSize: 'clamp(2.5rem, 5.5vw, 6rem)', // Responsive font boyutu
+        fontSize: 'clamp(1.5rem, 5vw, 5rem)', // Küçültüldü: 6rem -> 5rem
         fontWeight: 700,
         lineHeight: 1.2,
         marginBottom: '2rem',
@@ -123,7 +123,7 @@ const Hero = () => {
 
     // Açıklama metni stili
     const descriptionStyle: CSSProperties = {
-        fontSize: 'clamp(1.125rem, 2.5vw, 2rem)', // Responsive font boyutu
+        fontSize: 'clamp(0.875rem, 2vw, 1.5rem)', // Küçültüldü: 2rem -> 1.5rem
         lineHeight: 1.6,
         color: '#FFFFFF',
         maxWidth: '1000px',

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { type CSSProperties } from 'react';
+import { contactInfo } from '../constants';
 
 /**
  * Footer Bileşeni
@@ -135,11 +136,10 @@ const Footer = () => {
                         </div>
 
                         <div style={contactStyle}>
-                            <p style={infoStyle}>info@kncdesign.com.tr</p>
-                            <p style={infoStyle}>+90 552 636 01 42</p>
+                            <p style={infoStyle}>{contactInfo.email}</p>
+                            <p style={infoStyle}>{contactInfo.phone}</p>
                             <p style={addressStyle}>
-                                Fevziçakmak, 10453. Sk. No:16/B, <br />
-                                42050 Karatay/Konya
+                                {contactInfo.address}
                             </p>
                         </div>
                     </div>
@@ -150,12 +150,12 @@ const Footer = () => {
                             <Link to="/" style={navLinkStyle} className="footer__nav-link">ana sayfa</Link>
                             <Link to="/hakkimizda" style={navLinkStyle} className="footer__nav-link">hakkımızda</Link>
                             <Link to="/referanslar" style={navLinkStyle} className="footer__nav-link">referanslar</Link>
-                            <Link to="/#contact" style={navLinkStyle} className="footer__nav-link">iletişim</Link>
-                            <Link to="/#flash-ads" style={navLinkStyle} className="footer__nav-link">flaş reklam</Link>
+                            <Link to="/iletisim" style={navLinkStyle} className="footer__nav-link">iletişim</Link>
+                            <Link to="/hizmetlerimiz" style={navLinkStyle} className="footer__nav-link">flaş reklam</Link>
                         </nav>
 
                         <div style={socialsStyle}>
-                            <a href="#" style={socialLinkStyle} className="footer__social-link" aria-label="Instagram">
+                            <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" style={socialLinkStyle} className="footer__social-link" aria-label="Instagram">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             </a>
                             <a href="#" style={socialLinkStyle} className="footer__social-link" aria-label="X">
