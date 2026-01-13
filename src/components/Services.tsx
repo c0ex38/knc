@@ -217,21 +217,31 @@ const Services = () => {
                             strokeWidth="3"
                             strokeLinecap="round"
                         />
-                        {/* Service Items */}
                         <g className="service-items">
-                            {servicesData.map((service, index) => (
+                            {servicesData.map((service, index) => {
+                                const item = service as { 
+                                    number: string; 
+                                    title: string; 
+                                    desc1: string; 
+                                    desc2: string; 
+                                    desc3?: string; 
+                                    x: number; 
+                                    y: number; 
+                                    align: string; 
+                                };
+                                return (
                                 <ServiceItem
                                     key={index}
-                                    number={service.number}
-                                    title={service.title}
-                                    desc1={service.desc1}
-                                    desc2={service.desc2}
-                                    desc3={(service as any).desc3}
-                                    x={service.x}
-                                    y={service.y}
-                                    align={service.align as "left" | "right"}
+                                    number={item.number}
+                                    title={item.title}
+                                    desc1={item.desc1}
+                                    desc2={item.desc2}
+                                    desc3={item.desc3}
+                                    x={item.x}
+                                    y={item.y}
+                                    align={item.align as "left" | "right"}
                                 />
-                            ))}
+                            )})}
                         </g>
                     </svg>
                 </div>

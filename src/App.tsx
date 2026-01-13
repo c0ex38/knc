@@ -14,30 +14,41 @@ const References = lazy(() => import('./pages/References'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+import { useState } from 'react';
+import Preloader from './components/Preloader';
+
 function App() {
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
       <SpeedInsights />
-      <Layout>
-        <ErrorBoundary>
-          <Suspense fallback={<Loading />}>
-            <AnimatePresence mode="wait">
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-                <Route path="/hakkimizda" element={<PageTransition><About /></PageTransition>} />
-                <Route path="/hizmetlerimiz" element={<PageTransition><ServicesPage /></PageTransition>} />
-                <Route path="/referanslar" element={<PageTransition><References /></PageTransition>} />
-                <Route path="/iletisim" element={<PageTransition><Contact /></PageTransition>} />
-                <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-              </Routes>
-            </AnimatePresence>
-          </Suspense>
-        </ErrorBoundary>
-      </Layout>
+      <AnimatePresence mode="wait">
+        {loading && (
+          <Preloader key="preloader" onComplete={() => setLoading(false)} />
+        )}
+      </AnimatePresence>
+      
+      {!loading && (
+        <Layout>
+            <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+                <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                    <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+                    <Route path="/hakkimizda" element={<PageTransition><About /></PageTransition>} />
+                    <Route path="/hizmetlerimiz" element={<PageTransition><ServicesPage /></PageTransition>} />
+                    <Route path="/referanslar" element={<PageTransition><References /></PageTransition>} />
+                    <Route path="/iletisim" element={<PageTransition><Contact /></PageTransition>} />
+                    <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+                </Routes>
+                </AnimatePresence>
+            </Suspense>
+            </ErrorBoundary>
+        </Layout>
+      )}
     </>
-
   );
 }
 

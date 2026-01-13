@@ -134,18 +134,19 @@ const ThreeD = () => {
             renderer.setSize(canvasRef.current.clientWidth, canvasRef.current.clientHeight);
         };
 
+        const currentCanvas = canvasRef.current;
+
         window.addEventListener('resize', handleResize);
 
         // Cleanup
         return () => {
             window.removeEventListener('resize', handleResize);
 
-            const container = canvasRef.current;
-            if (container) {
-                container.removeEventListener('mousemove', handleMouseMove);
-                const canvas = container.querySelector('canvas');
+            if (currentCanvas) {
+                currentCanvas.removeEventListener('mousemove', handleMouseMove);
+                const canvas = currentCanvas.querySelector('canvas');
                 if (canvas) {
-                    container.removeChild(canvas);
+                    currentCanvas.removeChild(canvas);
                 }
             }
 
