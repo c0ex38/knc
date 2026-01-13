@@ -222,26 +222,55 @@ const ThreeD = () => {
         margin: '0 auto',
         padding: '15vh 2rem 0', // Added top padding, removed vertical centering gap
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '8rem',
+        gridTemplateColumns: '45% 55%', // Text slightly narrower to bring canvas closer
+        gap: '2rem', // Reduced gap significantly from 8rem
         alignItems: 'start', // Changed from center to start
     };
 
     const contentStyle: CSSProperties = {
-        paddingRight: '3rem',
+        paddingRight: '0',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center', // Centered horizontally
+        justifyContent: 'center', // Vertically centered in its column
+        textAlign: 'center',
     };
 
     const bigTextStyle: CSSProperties = {
-        fontSize: 'clamp(200px, 25vw, 500px)',
-        fontWeight: 700,
+        fontSize: 'clamp(200px, 30vw, 550px)', // Made larger
+        fontWeight: 900,
         color: '#FFFFFF',
-        letterSpacing: '0.05em',
+        letterSpacing: '-0.02em',
         display: 'flex',
         alignItems: 'center',
+        lineHeight: 0.8,
+        fontFamily: 'Inter, sans-serif',
+    };
+
+    const subTitleStyle: CSSProperties = {
+        fontSize: 'clamp(30px, 4vw, 60px)', // Made smaller
+        fontWeight: 900,
+        color: '#FFFFFF',
+        marginTop: '1rem',
+        textTransform: 'lowercase',
+        letterSpacing: '0.05em',
         lineHeight: 1,
+    };
+
+    const descriptionContainerStyle: CSSProperties = {
+        marginTop: '2rem',
+        maxWidth: '500px', // Slightly narrower for better reading
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        textAlign: 'left', // Changed to left alignment
+    };
+
+    const descriptionTextStyle: CSSProperties = {
+        fontSize: '0.9rem', // Made smaller
+        color: '#CCCCCC',
+        fontWeight: 400,
+        lineHeight: 1.6,
     };
 
     const numberContainerStyle: CSSProperties = {
@@ -265,7 +294,7 @@ const ThreeD = () => {
 
     const canvasStyle: CSSProperties = {
         width: '100%',
-        height: '600px',
+        height: '750px',
         position: 'relative',
     };
 
@@ -292,7 +321,7 @@ const ThreeD = () => {
                             gap: 4rem !important;
                         }
                         [data-threed-canvas] {
-                            height: 500px !important;
+                            height: 600px !important;
                         }
                     }
 
@@ -306,7 +335,7 @@ const ThreeD = () => {
                             text-align: center;
                         }
                         [data-threed-canvas] {
-                            height: 400px !important;
+                            height: 500px !important;
                         }
                     }
 
@@ -315,7 +344,7 @@ const ThreeD = () => {
                             padding: 4rem 1.5rem !important;
                         }
                         [data-threed-canvas] {
-                            height: 300px !important;
+                            height: 400px !important;
                         }
                     }
                 `}
@@ -337,6 +366,20 @@ const ThreeD = () => {
                                         <span style={numberStyle}>3</span>
                                     </div>
                                 </span>D
+                            </div>
+                            <div style={subTitleStyle}>
+                                animasyon
+                            </div>
+                            <div style={descriptionContainerStyle}>
+                                <p style={descriptionTextStyle}>
+                                    Ürün tanıtımlarından dev ekranlara, sosyal medya videolarından mimari 
+                                    görselleştirmelere kadar geniş bir alanda 3D modelleme, CGI efektleri ve hareketli 
+                                    animasyonlar üretiyoruz.
+                                </p>
+                                <p style={descriptionTextStyle}>
+                                    Markanız için görsel olarak çarpıcı, teknik olarak kusursuz sahneler hazırlıyor; anlatmak 
+                                    istediğiniz hikâyeyi dijitalde üç boyutlu hale getiriyoruz.
+                                </p>
                             </div>
                         </div>
 

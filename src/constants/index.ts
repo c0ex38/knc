@@ -66,7 +66,7 @@ export const servicesData = [
 export const contactInfo = {
     email: 'info@kncdesign.com.tr',
     phone: '+90 552 636 01 42',
-    instagram: 'https://instagram.com/knccreative',
+    instagram: 'https://instagram.com/knccreative_',
     whatsappLink: 'https://wa.me/905526360142',
     address: 'Fevziçakmak, 10453. Sk. No:16/B, 42050 Karatay/Konya'
 };

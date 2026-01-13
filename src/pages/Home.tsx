@@ -3,6 +3,7 @@ import Services from '../components/Services';
 import ThreeD from '../components/ThreeD';
 import Marquee from '../components/Marquee';
 import GoogleMap from '../components/GoogleMap';
+import ContactCTA from '../components/ContactCTA';
 import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
             <Marquee />
             <ThreeD />
             <GoogleMap />
+            <ContactCTA />
         </>
     );
 };
