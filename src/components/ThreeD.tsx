@@ -1,7 +1,10 @@
-import './ThreeD.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type CSSProperties } from 'react';
 import * as THREE from 'three';
 
+/**
+ * ThreeD Bileşeni
+ * 3D logo animasyonu - scroll ile 2D'den 3D'ye geçiş ve interaktif Three.js canvas
+ */
 const ThreeD = () => {
     const canvasRef = useRef<HTMLDivElement>(null);
 
@@ -199,27 +202,155 @@ const ThreeD = () => {
         };
     }, []);
 
-    return (
-        <section className="threed">
-            <div className="threed__scroll-content">
-                <div className="threed__container">
-                    {/* Left Content - Big Animated Text */}
-                    <div className="threed__content">
-                        <div className="threed__big-text">
-                            <span className="number-container">
-                                <div className="numbers-wrapper" id="numbersWrapper">
-                                    <span className="number">2</span>
-                                    <span className="number">3</span>
-                                </div>
-                            </span>D
-                        </div>
-                    </div>
+    // Styles
+    const threedStyle: CSSProperties = {
+        position: 'relative',
+        background: '#111010',
+    };
 
-                    {/* Right 3D Canvas */}
-                    <div className="threed__canvas" ref={canvasRef}></div>
+    const scrollContentStyle: CSSProperties = {
+        minHeight: '300vh',
+        position: 'relative',
+    };
+
+    const containerStyle: CSSProperties = {
+        position: 'sticky',
+        top: 0,
+        height: '100vh',
+        maxWidth: '1600px',
+        width: '100%',
+        margin: '0 auto',
+        padding: '0 2rem',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '8rem',
+        alignItems: 'center',
+    };
+
+    const contentStyle: CSSProperties = {
+        paddingRight: '3rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    };
+
+    const bigTextStyle: CSSProperties = {
+        fontSize: 'clamp(200px, 25vw, 500px)',
+        fontWeight: 700,
+        color: '#FFFFFF',
+        letterSpacing: '0.05em',
+        display: 'flex',
+        alignItems: 'center',
+        lineHeight: 1,
+    };
+
+    const numberContainerStyle: CSSProperties = {
+        position: 'relative',
+        display: 'inline-block',
+        overflow: 'hidden',
+        height: '1em',
+        verticalAlign: 'top',
+    };
+
+    const numbersWrapperStyle: CSSProperties = {
+        position: 'relative',
+        transition: 'transform 0.5s ease',
+        transform: 'translateY(0%)',
+    };
+
+    const numberStyle: CSSProperties = {
+        display: 'block',
+        lineHeight: '1em',
+    };
+
+    const canvasStyle: CSSProperties = {
+        width: '100%',
+        height: '600px',
+        position: 'relative',
+    };
+
+    return (
+        <>
+            {/* Responsive CSS */}
+            <style>
+                {`
+                    /* Canvas içindeki canvas elementi */
+                    .threed__canvas canvas {
+                        display: block;
+                        width: 100% !important;
+                        height: 100% !important;
+                    }
+
+                    /* Container içindeki tüm elementler pointer-events alabilir */
+                    .threed__container > * {
+                        pointer-events: auto;
+                    }
+
+                    /* Responsive Styles */
+                    @media (max-width: 1024px) {
+                        [data-threed-container] {
+                            gap: 4rem !important;
+                        }
+                        [data-threed-canvas] {
+                            height: 500px !important;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        [data-threed-container] {
+                            grid-template-columns: 1fr !important;
+                            gap: 3rem !important;
+                        }
+                        [data-threed-content] {
+                            padding-right: 0 !important;
+                            text-align: center;
+                        }
+                        [data-threed-canvas] {
+                            height: 400px !important;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                        [data-threed-section] {
+                            padding: 4rem 1.5rem !important;
+                        }
+                        [data-threed-canvas] {
+                            height: 300px !important;
+                        }
+                    }
+                `}
+            </style>
+
+            <section style={threedStyle} data-threed-section className="threed">
+                <div style={scrollContentStyle} className="threed__scroll-content">
+                    <div 
+                        style={containerStyle} 
+                        data-threed-container 
+                        className="threed__container"
+                    >
+                        {/* Left Content - Big Animated Text */}
+                        <div style={contentStyle} data-threed-content>
+                            <div style={bigTextStyle}>
+                                <span style={numberContainerStyle}>
+                                    <div style={numbersWrapperStyle} id="numbersWrapper">
+                                        <span style={numberStyle}>2</span>
+                                        <span style={numberStyle}>3</span>
+                                    </div>
+                                </span>D
+                            </div>
+                        </div>
+
+                        {/* Right 3D Canvas */}
+                        <div 
+                            style={canvasStyle} 
+                            data-threed-canvas 
+                            className="threed__canvas" 
+                            ref={canvasRef}
+                        ></div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 };
 

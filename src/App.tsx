@@ -1,13 +1,11 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import './App.css';
 import Layout from './components/Layout';
 import Loading from './components/Loading';
 import ErrorBoundary from './components/ErrorBoundary';
 import PageTransition from './components/PageTransition';
 
-// Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
