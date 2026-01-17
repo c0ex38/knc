@@ -36,6 +36,8 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
         <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.8, ease: 'easeInOut' } }}
+            role="main"
+            aria-label="Yükleniyor"
             style={{
                 position: 'fixed',
                 top: 0,
@@ -117,7 +119,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
                     bottom: 'calc(10% - 25px)',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    color: '#444',
+                    color: '#aaaaaa',
                     fontSize: '0.8rem',
                     fontFamily: 'var(--font-family-base)',
                     fontVariantNumeric: 'tabular-nums',

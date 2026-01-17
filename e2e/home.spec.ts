@@ -1,4 +1,13 @@
 import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+
+test('homepage should not have any automatically detectable accessibility issues', async ({
+    page,
+}) => {
+    await page.goto('/');
+    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+});
 
 test('homepage has title and basic elements', async ({ page }) => {
     await page.goto('/');
@@ -7,7 +16,6 @@ test('homepage has title and basic elements', async ({ page }) => {
     await expect(page).toHaveTitle(/KNC Creative/);
 
     // Check if main heading is visible
-    // Note: Adjust selector based on your actual H1
     await expect(page.locator('h1').first()).toBeVisible();
 });
 
