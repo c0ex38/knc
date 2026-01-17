@@ -100,7 +100,7 @@ const About = () => {
 
     return (
         <>
-            <SEO 
+            <SEO
                 title="Hakkımızda"
                 description="Bakan çok, gören az. Biz göreniz. KNC Creative'in vizyonu ve misyonu hakkında detaylı bilgi."
                 canonical="https://kncdesign.com.tr/hakkimizda"
@@ -165,7 +165,8 @@ const About = () => {
                     {/* Sol Taraf - Mevcut İçerik */}
                     <div style={leftColumnStyle} data-about-left>
                         <h1 style={titleStyle} data-about-title>
-                            Bakan çok, gören az.<br />
+                            Bakan çok, gören az.
+                            <br />
                             Biz göreniz.
                         </h1>
 
@@ -180,15 +181,17 @@ const About = () => {
 
                         <div style={contentStyle} data-about-content>
                             <p>
-                                KNC Creative, grafik tasarımdan dijital içeriklere, kurumsal kimlikten sosyal medya
-                                yönetimine kadar markanızın ihtiyacı olan tüm görsel dünyayı tek bir çatı altında sunar.
+                                KNC Creative, grafik tasarımdan dijital içeriklere, kurumsal
+                                kimlikten sosyal medya yönetimine kadar markanızın ihtiyacı olan tüm
+                                görsel dünyayı tek bir çatı altında sunar.
                             </p>
                             <p>
-                                Biz, estetiği yalnızca "güzel" olan değil, doğru algılanan, fark edilen ve iz bırakan olarak tanımlarız.
+                                Biz, estetiği yalnızca &quot;güzel&quot; olan değil, doğru
+                                algılanan, fark edilen ve iz bırakan olarak tanımlarız.
                             </p>
                             <p>
-                                Çünkü her projeye yalnızca bakmıyor, derinlemesine görüyoruz.
-                                Ve bu farkla markanızı bir adım öne taşıyoruz.
+                                Çünkü her projeye yalnızca bakmıyor, derinlemesine görüyoruz. Ve bu
+                                farkla markanızı bir adım öne taşıyoruz.
                             </p>
                         </div>
                     </div>

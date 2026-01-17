@@ -68,7 +68,7 @@ const SEO = ({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'KNC Creative',
-        image: [`${siteUrl}/logo.png`, `${siteUrl}/og-image.jpg`],
+        image: [`${siteUrl}/logo.svg`, `${siteUrl}/og-image.jpg`],
         '@id': siteUrl,
         url: siteUrl,
         telephone: contactInfo.phone,

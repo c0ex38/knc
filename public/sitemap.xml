@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Ana Sayfa -->
+    <url>
+        <loc>https://kncdesign.com.tr/</loc>
+        <lastmod>2026-01-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Hakkımızda -->
+    <url>
+        <loc>https://kncdesign.com.tr/hakkimizda</loc>
+        <lastmod>2026-01-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Hizmetlerimiz -->
+    <url>
+        <loc>https://kncdesign.com.tr/hizmetlerimiz</loc>
+        <lastmod>2026-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Referanslar -->
+    <url>
+        <loc>https://kncdesign.com.tr/referanslar</loc>
+        <lastmod>2026-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- İletişim -->
+    <url>
+        <loc>https://kncdesign.com.tr/iletisim</loc>
+        <lastmod>2026-01-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>

@@ -120,7 +120,17 @@ const Navbar = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className={styles.overlay} onClick={() => setIsMobileMenuOpen(false)} />
+                <div
+                    className={styles.overlay}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            setIsMobileMenuOpen(false);
+                        }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                />
             )}
 
             {/* Mobile Menu */}

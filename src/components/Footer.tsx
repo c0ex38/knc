@@ -48,7 +48,7 @@ const Footer = () => {
             ),
         },
         {
-            href: 'https://www.instagram.com/knccreative_/', // TODO: Update with actual Facebook link
+            href: 'https://www.facebook.com/knccreative',
             label: 'Facebook',
             icon: (
                 <svg
@@ -66,7 +66,7 @@ const Footer = () => {
             ),
         },
         {
-            href: 'https://www.instagram.com/knccreative_/', // TODO: Update with actual Spotify link
+            href: '#',
             label: 'Spotify',
             icon: (
                 <svg
