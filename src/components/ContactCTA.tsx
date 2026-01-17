@@ -10,8 +10,8 @@ const ContactCTA = () => {
             {/* Decorative Background Text */}
             <div className={styles.decorativeTextContainer}>
                 <div className={styles.movingText}>
-                    <span>CONTACT US CONTACT US&nbsp;</span>
-                    <span>CONTACT US CONTACT US&nbsp;</span>
+                    <span>BİZE ULAŞIN BİZE ULAŞIN&nbsp;</span>
+                    <span>BİZE ULAŞIN BİZE ULAŞIN&nbsp;</span>
                 </div>
             </div>
 

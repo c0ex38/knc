@@ -44,8 +44,8 @@ const About = () => {
 
     const dividerStyle: CSSProperties = {
         display: 'flex',
-        gap: '8px',
-        marginBottom: '8rem',
+        gap: '2px', // 8px -> 2px
+        marginBottom: '4rem', // Reduced from 8rem to close the gap
     };
 
     const circleIconStyle: CSSProperties = {
@@ -84,20 +84,6 @@ const About = () => {
         minHeight: '600px',
     };
 
-    const rightPlaceholderStyle: CSSProperties = {
-        width: '100%',
-        height: '100%',
-        minHeight: '600px',
-        backgroundColor: '#1A1A1A',
-        borderRadius: '1.5rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'rgba(255, 255, 255, 0.3)',
-        fontSize: '1.5rem',
-        border: '2px dashed #3C3C3C',
-    };
-
     return (
         <>
             <SEO
@@ -132,9 +118,11 @@ const About = () => {
                     @media (max-width: 480px) {
                         [data-about-page] {
                             padding-top: 100px !important;
+                            padding-left: 1rem !important;
+                            padding-right: 1rem !important;
                         }
                         [data-about-container] {
-                            padding: 0 1.5rem !important;
+                            padding: 0 !important;
                         }
                         [data-about-title] {
                             font-size: 2rem !important;
@@ -172,11 +160,16 @@ const About = () => {
 
                         <div style={dividerStyle} data-about-divider>
                             {/* Tekrarlayan Daire Deseni */}
-                            {Array.from({ length: 12 }).map((_, i) => (
-                                <div key={i} style={circleIconStyle} data-about-circle>
-                                    <div style={circleInnerStyle} data-about-circle-inner></div>
-                                </div>
-                            ))}
+                            {Array.from({ length: 16 }).map(
+                                (
+                                    _,
+                                    i // 12 -> 16
+                                ) => (
+                                    <div key={i} style={circleIconStyle} data-about-circle>
+                                        <div style={circleInnerStyle} data-about-circle-inner></div>
+                                    </div>
+                                )
+                            )}
                         </div>
 
                         <div style={contentStyle} data-about-content>
@@ -196,11 +189,32 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Sağ Taraf - Yeni Alan */}
                     <div style={rightColumnStyle} data-about-right>
-                        <div style={rightPlaceholderStyle}>
-                            {/* Buraya görsel, video veya başka içerik eklenebilir */}
-                            Sağ Taraf İçeriği
+                        <div
+                            style={{
+                                width: '100%',
+                                maxWidth: '350px', // Reduced from 500px
+                                aspectRatio: '9 / 16',
+                                backgroundColor: '#1a1a1a',
+                                borderRadius: '1.5rem',
+                                overflow: 'hidden',
+                                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                            }}
+                        >
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                }}
+                            >
+                                <source src="/contact-video.mp4" type="video/mp4" />
+                                Video yüklenemedi
+                            </video>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ import styles from './References.module.css';
 
 const references = [
     { id: 1, name: 'acente42', title: 'sigorta', image: '/referans_logos/acente.svg' },
-    { id: 2, name: 'INGENIA', title: "bureau d'etude", image: '/referans_logos/ingenia.svg' },
+    { id: 2, name: 'INGENIA', title: 'Mühendislik Ofisi', image: '/referans_logos/ingenia.svg' },
     { id: 3, name: 'pre plats', title: '', image: '/referans_logos/preplats.svg' },
     { id: 4, name: 'Dr. Mevlüt Mert', title: '', image: '/referans_logos/mevlut.svg' },
     { id: 5, name: 'altınkaynak', title: '', image: '/referans_logos/altinkaynak.svg' },

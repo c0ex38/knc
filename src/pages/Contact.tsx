@@ -28,7 +28,7 @@ const Contact = () => {
                     {/* Sol Taraf - İçerik */}
                     <div className={styles.contentWrapper}>
                         {/* Ana Başlık */}
-                        <h1 className={styles.title}>Let&apos;s Talk</h1>
+                        <h1 className={styles.title}>Hadi Konuşalım</h1>
 
                         {/* Alt Başlık */}
                         <p className={styles.subtitle}>Projeleriniz için bizimle iletişime geçin</p>
