@@ -1,0 +1,149 @@
+.section {
+    position: relative;
+    min-height: auto;
+    padding: 8rem 2rem;
+    background: #111010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 8rem;
+}
+
+.title {
+    font-size: clamp(2rem, 4.5vw, 4.5rem);
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: clamp(0.95rem, 1.5vw, 1.35rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    max-width: 800px;
+    margin: 2rem 0 0;
+}
+
+.divider {
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    margin: 4rem auto 0;
+    display: block;
+}
+
+/* Service Item Text Styles */
+.numberText {
+    fill: #fff;
+    fill-opacity: 0.3;
+    font-size: 150px;
+    font-weight: 300;
+    font-family: var(--font-family-heading);
+}
+
+.titleText {
+    fill: #fff;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: var(--font-family-heading);
+}
+
+.descText {
+    fill: #fff;
+    fill-opacity: 0.7;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: var(--font-family-base);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .divider {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+    .header {
+        margin-bottom: 3rem;
+    }
+    .title {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    .divider {
+        max-width: 600px;
+    }
+
+    /* Mobile SVG Text Scaling */
+    .numberText {
+        font-size: 100px;
+    }
+    .titleText {
+        font-size: 32px;
+    }
+    .descText {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+    .title {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+    .subtitle {
+        font-size: clamp(0.875rem, 4vw, 1rem);
+    }
+    .divider {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    /* Smaller Mobile SVG Text Scaling */
+    .numberText {
+        font-size: 140px;
+    }
+    .titleText {
+        font-size: 50px;
+    }
+    .descText {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 360px) {
+    .section {
+        padding: 2rem 0.5rem;
+    }
+    .divider {
+        max-width: 100%;
+    }
+}
+
+/* Large Screen SVG Text Scaling */
+@media (min-width: 1600px) {
+    .numberText {
+        font-size: 210px;
+    }
+    .titleText {
+        font-size: 56px;
+    }
+    .descText {
+        font-size: 24px;
+    }
+}

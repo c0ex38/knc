@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /private/
-Disallow: /admin/
-
 Sitemap: https://kncdesign.com.tr/sitemap.xml

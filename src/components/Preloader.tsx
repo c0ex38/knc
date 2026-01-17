@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import type { PreloaderProps } from '../types';
 
-const Preloader = ({ onComplete }: { onComplete: () => void }) => {
+const Preloader = ({ onComplete }: PreloaderProps) => {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
@@ -11,7 +12,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         const step = 100 / (duration / interval);
 
         const timer = setInterval(() => {
-            setProgress(prev => {
+            setProgress((prev) => {
                 const next = prev + step;
                 if (next >= 100) {
                     clearInterval(timer);
@@ -34,7 +35,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
     return (
         <motion.div
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+            exit={{ opacity: 0, transition: { duration: 0.8, ease: 'easeInOut' } }}
             style={{
                 position: 'fixed',
                 top: 0,
@@ -47,7 +48,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                fontFamily: 'var(--font-family-heading)'
+                fontFamily: 'var(--font-family-heading)',
             }}
         >
             <div style={{ position: 'relative', textAlign: 'center' }}>
@@ -55,14 +56,14 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                 <motion.h1
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
                     style={{
                         fontSize: 'clamp(3rem, 5vw, 6rem)',
                         fontWeight: 900,
                         color: '#fff',
                         margin: 0,
                         lineHeight: 1,
-                        letterSpacing: '-0.02em'
+                        letterSpacing: '-0.02em',
                     }}
                 >
                     KNC
@@ -79,7 +80,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                         fontSize: '0.9rem',
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
-                        fontFamily: 'var(--font-family-base)'
+                        fontFamily: 'var(--font-family-base)',
                     }}
                 >
                     Creative
@@ -87,37 +88,41 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
             </div>
 
             {/* Progress Bar Container */}
-            <div style={{
-                position: 'absolute',
-                bottom: '10%',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '200px',
-                height: '2px',
-                background: 'rgba(255,255,255,0.1)',
-                overflow: 'hidden'
-            }}>
+            <div
+                style={{
+                    position: 'absolute',
+                    bottom: '10%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '200px',
+                    height: '2px',
+                    background: 'rgba(255,255,255,0.1)',
+                    overflow: 'hidden',
+                }}
+            >
                 {/* Progress Bar Fill */}
                 <motion.div
                     style={{
                         height: '100%',
                         background: '#ff2700',
-                        width: `${progress}%`
+                        width: `${progress}%`,
                     }}
                 />
             </div>
-            
+
             {/* Percentage Text */}
-            <div style={{
-                position: 'absolute',
-                bottom: 'calc(10% - 25px)',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                color: '#444',
-                fontSize: '0.8rem',
-                fontFamily: 'var(--font-family-base)',
-                fontVariantNumeric: 'tabular-nums'
-            }}>
+            <div
+                style={{
+                    position: 'absolute',
+                    bottom: 'calc(10% - 25px)',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    color: '#444',
+                    fontSize: '0.8rem',
+                    fontFamily: 'var(--font-family-base)',
+                    fontVariantNumeric: 'tabular-nums',
+                }}
+            >
                 {Math.round(progress)}%
             </div>
         </motion.div>

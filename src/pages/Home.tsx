@@ -1,24 +1,30 @@
+import { Suspense, lazy } from 'react';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import ThreeD from '../components/ThreeD';
 import Marquee from '../components/Marquee';
-import GoogleMap from '../components/GoogleMap';
 import ContactCTA from '../components/ContactCTA';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
+import Loading from '../components/Loading';
+
+// Lazy load heavy components
+const GoogleMap = lazy(() => import('../components/GoogleMap'));
 
 const Home = () => {
     return (
         <>
-            <Helmet>
-                <title>KNC CREATIVE - Dijital Yaratıcılık Ajansı</title>
-                <meta name="description" content="KNC Creative ile markanızı öne çıkarın. Grafik tasarım, web tasarım ve sosyal medya yönetimi hizmetleri." />
-                <link rel="canonical" href="https://knccreative.com/" />
-            </Helmet>
+            <SEO
+                title="Dijital Yaratıcılık Ajansı"
+                description="KNC Creative ile markanızı öne çıkarın. Grafik tasarım, web tasarım ve sosyal medya yönetimi hizmetleri."
+                canonical="/"
+            />
             <Hero />
             <Services />
             <Marquee />
             <ThreeD />
-            <GoogleMap />
+            <Suspense fallback={<Loading />}>
+                <GoogleMap />
+            </Suspense>
             <ContactCTA />
         </>
     );

@@ -44,7 +44,7 @@ const ThreeD = () => {
             steps: 150,
             depth: 3,
             bevelEnabled: false,
-            curveSegments: 64
+            curveSegments: 64,
         };
 
         const geometry = new THREE.ExtrudeGeometry(arcShape, extrudeSettings);
@@ -55,7 +55,7 @@ const ThreeD = () => {
             color: 0xffffff,
             shininess: 100,
             flatShading: false,
-            side: THREE.DoubleSide
+            side: THREE.DoubleSide,
         });
 
         const ring = new THREE.Mesh(geometry, material);
@@ -69,7 +69,7 @@ const ThreeD = () => {
 
         const innerDiskMaterial = new THREE.MeshBasicMaterial({
             color: 0xff2700,
-            side: THREE.DoubleSide
+            side: THREE.DoubleSide,
         });
 
         const innerDisk = new THREE.Mesh(innerDiskGeometry, innerDiskMaterial);
@@ -162,8 +162,8 @@ const ThreeD = () => {
     useEffect(() => {
         // Scroll handler for number animation (based on window scroll)
         const handleScroll = () => {
-            const section = document.querySelector('.threed__scroll-content') as HTMLElement;
-            if (!section) return;
+            const section = document.querySelector('.threed__scroll-content');
+            if (!section || !(section instanceof HTMLElement)) return;
 
             const rect = section.getBoundingClientRect();
             const sectionTop = rect.top;
@@ -178,7 +178,10 @@ const ThreeD = () => {
             const currentScroll = sectionTop;
 
             // Normalize to 0-1 range
-            const scrollProgress = Math.max(0, Math.min(1, (scrollStart - currentScroll) / scrollRange));
+            const scrollProgress = Math.max(
+                0,
+                Math.min(1, (scrollStart - currentScroll) / scrollRange)
+            );
 
             const wrapper = document.getElementById('numbersWrapper');
             if (!wrapper) return;
@@ -354,11 +357,7 @@ const ThreeD = () => {
 
             <section style={threedStyle} data-threed-section className="threed">
                 <div style={scrollContentStyle} className="threed__scroll-content">
-                    <div 
-                        style={containerStyle} 
-                        data-threed-container 
-                        className="threed__container"
-                    >
+                    <div style={containerStyle} data-threed-container className="threed__container">
                         {/* Left Content - Big Animated Text */}
                         <div style={contentStyle} data-threed-content>
                             <div style={bigTextStyle}>
@@ -367,29 +366,29 @@ const ThreeD = () => {
                                         <span style={numberStyle}>2</span>
                                         <span style={numberStyle}>3</span>
                                     </div>
-                                </span>D
+                                </span>
+                                D
                             </div>
-                            <div style={subTitleStyle}>
-                                animasyon
-                            </div>
+                            <div style={subTitleStyle}>animasyon</div>
                             <div style={descriptionContainerStyle}>
                                 <p style={descriptionTextStyle}>
-                                    Ürün tanıtımlarından dev ekranlara, sosyal medya videolarından mimari 
-                                    görselleştirmelere kadar geniş bir alanda 3D modelleme, CGI efektleri ve hareketli 
-                                    animasyonlar üretiyoruz.
+                                    Ürün tanıtımlarından dev ekranlara, sosyal medya videolarından
+                                    mimari görselleştirmelere kadar geniş bir alanda 3D modelleme,
+                                    CGI efektleri ve hareketli animasyonlar üretiyoruz.
                                 </p>
                                 <p style={descriptionTextStyle}>
-                                    Markanız için görsel olarak çarpıcı, teknik olarak kusursuz sahneler hazırlıyor; anlatmak 
-                                    istediğiniz hikâyeyi dijitalde üç boyutlu hale getiriyoruz.
+                                    Markanız için görsel olarak çarpıcı, teknik olarak kusursuz
+                                    sahneler hazırlıyor; anlatmak istediğiniz hikâyeyi dijitalde üç
+                                    boyutlu hale getiriyoruz.
                                 </p>
                             </div>
                         </div>
 
                         {/* Right 3D Canvas */}
-                        <div 
-                            style={canvasStyle} 
-                            data-threed-canvas 
-                            className="threed__canvas" 
+                        <div
+                            style={canvasStyle}
+                            data-threed-canvas
+                            className="threed__canvas"
                             ref={canvasRef}
                         ></div>
                     </div>

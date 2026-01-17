@@ -1,0 +1,204 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111010;
+    overflow: hidden;
+    padding: 120px 2rem 0;
+    margin-bottom: -15vh;
+}
+
+.container {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    position: relative;
+    width: 140%;
+    max-width: 2800px;
+    aspect-ratio: 2 / 1;
+    border: 5px solid #ff2700;
+    border-bottom: none;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    overflow: hidden;
+    background: radial-gradient(
+        ellipse 100% 70% at center top,
+        rgba(255, 39, 0, 0.05) 0%,
+        rgba(60, 25, 15, 0.25) 25%,
+        rgba(30, 20, 15, 0.5) 50%,
+        rgba(17, 16, 16, 0.95) 70%,
+        #111010 85%
+    );
+    box-shadow:
+        inset 0 -100px 250px rgba(0, 0, 0, 0.95),
+        inset 0 15px 60px rgba(255, 39, 0, 0.05),
+        inset 0 0 40px rgba(255, 39, 0, 0.08);
+}
+
+.content {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1400px;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #ff2700;
+}
+
+.description {
+    font-size: clamp(0.875rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-weight: 500;
+    min-height: 3em;
+}
+
+.cursor {
+    color: #ff2700;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Media Queries */
+
+/* Large Screens (1600px+) */
+@media (min-width: 1600px) {
+    .circle {
+        width: 145% !important;
+        max-width: 3000px !important;
+    }
+    .content {
+        top: 22% !important;
+    }
+}
+
+/* Large Tablets (1200px-) */
+@media (max-width: 1200px) {
+    .circle {
+        width: 140% !important;
+        max-width: 2200px !important;
+    }
+    .content {
+        top: 23% !important;
+        width: 92% !important;
+    }
+}
+
+/* Tablets (1024px-) */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 100px 1.5rem 0 !important;
+    }
+    .circle {
+        width: 145% !important;
+        max-width: 2000px !important;
+        border-width: 4px !important;
+    }
+    .content {
+        top: 23% !important;
+        width: 95% !important;
+    }
+}
+
+/* Small Tablets (768px-) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 1.5rem 0 !important;
+        min-height: 100vh !important;
+    }
+    .content {
+        top: 26% !important;
+        width: 95% !important;
+        padding: 0 1.5rem !important;
+    }
+    .circle {
+        width: 150% !important;
+        max-width: 1600px !important;
+        border-width: 4px !important;
+    }
+}
+
+/* Mobile Devices (480px-) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 0.75rem 0 !important;
+        min-height: 100vh !important;
+    }
+    .content {
+        top: 30% !important;
+        width: 92% !important;
+        padding: 0 1.5rem !important;
+    }
+    .circle {
+        width: 160% !important;
+        max-width: 1200px !important;
+        border-width: 3px !important;
+    }
+    .cursor {
+        margin-left: 1px !important;
+    }
+}
+
+/* Small Mobile Devices (360px-) */
+@media (max-width: 360px) {
+    .hero {
+        padding: 70px 0.5rem 0 !important;
+    }
+    .content {
+        top: 28% !important;
+        width: 98% !important;
+    }
+    .circle {
+        width: 155% !important;
+        max-width: 900px !important;
+        border-width: 2px !important;
+    }
+}

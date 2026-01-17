@@ -22,9 +22,9 @@ interface SEOProps {
     breadcrumbs?: Array<{ name: string; item: string }>;
 }
 
-const SEO = ({ 
-    title, 
-    description, 
+const SEO = ({
+    title,
+    description,
     canonical,
     image = '/og-image.jpg',
     type = 'website',
@@ -32,7 +32,7 @@ const SEO = ({
     author = 'KNC Creative',
     publishedTime,
     modifiedTime,
-    breadcrumbs
+    breadcrumbs,
 }: SEOProps) => {
     const siteUrl = 'https://kncdesign.com.tr';
     const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
@@ -58,77 +58,85 @@ const SEO = ({
         'İş Elbiseleri',
         'Flaş Reklam',
         'Profesyonel Web Tasarım',
-        'E-ticaret Sitesi Yapan Firmalar'
+        'E-ticaret Sitesi Yapan Firmalar',
     ];
 
     const allKeywords = [...new Set([...keywords, ...defaultKeywords])].join(', ');
 
     // LocalBusiness Schema (Daha detaylı yerel işletme verisi)
     const localBusinessSchema = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "KNC Creative",
-        "image": [
-            `${siteUrl}/logo.png`,
-            `${siteUrl}/og-image.jpg`
-        ],
-        "@id": siteUrl,
-        "url": siteUrl,
-        "telephone": contactInfo.phone,
-        "email": contactInfo.email,
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Fevziçakmak, 10453. Sk. No:16/B",
-            "addressLocality": "Karatay",
-            "addressRegion": "Konya",
-            "postalCode": "42050",
-            "addressCountry": "TR"
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'KNC Creative',
+        image: [`${siteUrl}/logo.png`, `${siteUrl}/og-image.jpg`],
+        '@id': siteUrl,
+        url: siteUrl,
+        telephone: contactInfo.phone,
+        email: contactInfo.email,
+        priceRange: '$$',
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Fevziçakmak, 10453. Sk. No:16/B',
+            addressLocality: 'Karatay',
+            addressRegion: 'Konya',
+            postalCode: '42050',
+            addressCountry: 'TR',
         },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "37.9256", // Yaklaşık Konya Karatay Sanayi koordinatları
-            "longitude": "32.5186"
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude: '37.9256', // Yaklaşık Konya Karatay Sanayi koordinatları
+            longitude: '32.5186',
         },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-            ],
-            "opens": "09:00",
-            "closes": "18:00"
+        openingHoursSpecification: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '09:00',
+            closes: '18:00',
         },
-        "sameAs": [
+        sameAs: [
             contactInfo.instagram,
             contactInfo.whatsappLink,
-            "https://www.facebook.com/knccreative",
-            "https://twitter.com/knccreative"
+            'https://www.facebook.com/knccreative',
+            'https://twitter.com/knccreative',
         ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": contactInfo.phone,
-            "contactType": "customer service",
-            "areaServed": "TR",
-            "availableLanguage": "Turkish"
-        }
+        contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: contactInfo.phone,
+            contactType: 'customer service',
+            areaServed: 'TR',
+            availableLanguage: 'Turkish',
+        },
+    };
+
+    // WebSite Schema (Sitelinks Search Box için)
+    const websiteSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'KNC Creative',
+        url: siteUrl,
+        potentialAction: {
+            '@type': 'SearchAction',
+            target: {
+                '@type': 'EntryPoint',
+                urlTemplate: `${siteUrl}/search?q={search_term_string}`,
+            },
+            'query-input': 'required name=search_term_string',
+        },
     };
 
     // Breadcrumb Schema
-    const breadcrumbSchema = breadcrumbs ? {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": breadcrumbs.map((crumb, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "name": crumb.name,
-            "item": `${siteUrl}${crumb.item}`
-        }))
-    } : null;
+    const breadcrumbSchema = breadcrumbs
+        ? {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: breadcrumbs.map((crumb, index) => ({
+                  '@type': 'ListItem',
+                  position: index + 1,
+                  name: crumb.name,
+                  item: `${siteUrl}${crumb.item}`,
+              })),
+          }
+        : null;
 
     return (
         <Helmet>
@@ -141,16 +149,19 @@ const SEO = ({
             <meta name="owner" content="KNC Creative" />
             <meta name="copyright" content={`© ${new Date().getFullYear()} KNC Creative`} />
             <meta name="theme-color" content="#FF2700" />
-            
+
             {/* 2. Bot ve Crawling Direktifleri */}
-            <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+            <meta
+                name="robots"
+                content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+            />
             <meta name="googlebot" content="index, follow" />
             <meta name="revisit-after" content="7 days" />
             <meta name="rating" content="General" />
-            
+
             {/* 3. Canonical */}
             <link rel="canonical" href={fullUrl} />
-            
+
             {/* 4. Location & Geo Tags (Yerel SEO için kritik) */}
             <meta name="geo.region" content="TR-42" />
             <meta name="geo.placename" content="Konya" />
@@ -181,19 +192,20 @@ const SEO = ({
             <meta name="twitter:image:alt" content={title} />
 
             {/* 7. Article Meta Tags (Eğer blog/yazı ise) */}
-            {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
-            {type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+            {type === 'article' && publishedTime && (
+                <meta property="article:published_time" content={publishedTime} />
+            )}
+            {type === 'article' && modifiedTime && (
+                <meta property="article:modified_time" content={modifiedTime} />
+            )}
             {type === 'article' && author && <meta property="article:author" content={author} />}
-            
+
             {/* 8. JSON-LD Schemas */}
-            <script type="application/ld+json">
-                {JSON.stringify(localBusinessSchema)}
-            </script>
-            
+            <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+            <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+
             {breadcrumbSchema && (
-                <script type="application/ld+json">
-                    {JSON.stringify(breadcrumbSchema)}
-                </script>
+                <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
             )}
         </Helmet>
     );

@@ -11,7 +11,7 @@
     /* Ana Renkler */
     --color-orange: #ff2700;
     --color-black: #111010;
-    --color-white: #F2F0EF;
+    --color-white: #f2f0ef;
 
     /* Renk Varyasyonları */
     --color-orange-light: #ff4d2b;
@@ -41,8 +41,10 @@
     --color-gray-900: #c3c2c2;
 
     /* Tipografi */
-    --font-family-heading: 'Benz Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-family-base: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    --font-family-heading:
+        'Benz Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-base:
+        'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 
     --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     /* 12px - 14px */
@@ -145,6 +147,32 @@ body {
     color: var(--color-white);
     background-color: var(--color-black);
     overflow-x: hidden;
+}
+
+/* Accessibility Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 1rem;
+    background: var(--color-orange);
+    color: white;
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: bold;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.bg-black {
+    background-color: var(--color-black);
+}
+
+.min-h-screen {
+    min-height: 100vh;
 }
 
 /* Headings use Space Grotesk */

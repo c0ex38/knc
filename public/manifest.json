@@ -1,0 +1,21 @@
+{
+    "name": "KNC Creative",
+    "short_name": "KNC",
+    "description": "KNC Creative Dijital Yaratıcılık Ajansı",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#111010",
+    "theme_color": "#FF2700",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
