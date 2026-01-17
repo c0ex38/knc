@@ -2,6 +2,7 @@ import { Suspense, lazy, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 
 import ErrorBoundary from '@/components/ErrorBoundary';
 import Preloader from '@/components/Preloader';
@@ -28,6 +29,7 @@ function App() {
         <>
             <ScrollToTop />
             <SpeedInsights />
+            <Analytics />
             <AnimatePresence mode="wait">
                 {loading && <Preloader key="preloader" onComplete={() => setLoading(false)} />}
             </AnimatePresence>
