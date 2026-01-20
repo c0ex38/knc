@@ -32,7 +32,7 @@ export default defineConfig({
             },
         }),
         Sitemap({
-            hostname: 'https://knccreative.com',
+            hostname: 'https://kncdesign.com.tr',
             dynamicRoutes: ['/', '/hakkimizda', '/hizmetlerimiz', '/referanslar', '/iletisim'],
         }),
     ],

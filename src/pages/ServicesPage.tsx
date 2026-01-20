@@ -84,7 +84,7 @@ const ServicesPage = () => {
             <SEO
                 title="Hizmetlerimiz"
                 description="KNC Creative'in sunduğu profesyonel hizmetler: Grafik tasarım, video prodüksiyon, kurumsal kimlik, sosyal medya yönetimi, web tasarım ve promosyon ürünleri."
-                canonical="https://knccreative.com/hizmetlerimiz"
+                canonical="https://kncdesign.com.tr/hizmetlerimiz"
             />
 
             <style>
