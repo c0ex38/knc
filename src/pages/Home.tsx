@@ -1,13 +1,13 @@
 import { Suspense, lazy } from 'react';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
-import ThreeD from '../components/ThreeD';
 import Marquee from '../components/Marquee';
 import ContactCTA from '../components/ContactCTA';
 import SEO from '../components/SEO';
 import Loading from '../components/Loading';
 
 // Lazy load heavy components
+const ThreeD = lazy(() => import('../components/ThreeD'));
 const GoogleMap = lazy(() => import('../components/GoogleMap'));
 
 const Home = () => {
@@ -21,7 +21,9 @@ const Home = () => {
             <Hero />
             <Services />
             <Marquee />
-            <ThreeD />
+            <Suspense fallback={null}>
+                <ThreeD />
+            </Suspense>
             <Suspense fallback={<Loading />}>
                 <GoogleMap />
             </Suspense>
