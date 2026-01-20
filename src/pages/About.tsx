@@ -70,7 +70,7 @@ const About = () => {
         flexDirection: 'column',
         gap: '3rem',
         lineHeight: 1.6,
-        fontSize: 'clamp(0.95rem, 1.1vw, 1.35rem)', // Küçültüldü: 1.75rem -> 1.35rem
+        fontSize: 'var(--font-size-lg)',
         color: '#CCCCCC',
         fontWeight: 300,
     };

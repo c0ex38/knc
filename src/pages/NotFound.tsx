@@ -36,14 +36,14 @@ const NotFound = () => {
     };
 
     const titleStyle: CSSProperties = {
-        fontSize: 'clamp(2rem, 5vw, 3rem)',
+        fontSize: 'var(--font-size-3xl)',
         fontWeight: 700,
         margin: 0,
         marginTop: '-5rem', // Görsele daha yakın
     };
 
     const descriptionStyle: CSSProperties = {
-        fontSize: '1.5rem',
+        fontSize: 'var(--font-size-2xl)',
         color: 'rgba(255, 255, 255, 0.9)',
         maxWidth: '600px',
         lineHeight: 1.6,
@@ -92,20 +92,10 @@ const NotFound = () => {
 
             <div style={notFoundStyle}>
                 <div style={containerStyle}>
-                    <img 
-                        src="/404.png" 
-                        alt="Sayfa Bulunamadı" 
-                        style={imageStyle}
-                    />
+                    <img src="/404.png" alt="Sayfa Bulunamadı" style={imageStyle} />
                     <h1 style={titleStyle}>Sayfa Bulunamadı</h1>
-                    <p style={descriptionStyle}>
-                        Bu sefer göremedik.
-                    </p>
-                    <Link 
-                        to="/" 
-                        style={buttonStyle}
-                        className="not-found-button"
-                    >
+                    <p style={descriptionStyle}>Bu sefer göremedik.</p>
+                    <Link to="/" style={buttonStyle} className="not-found-button">
                         Ana Sayfaya Dön
                     </Link>
                 </div>

@@ -62,7 +62,7 @@ const ServicesPage = () => {
     };
 
     const cardTitleStyle: CSSProperties = {
-        fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+        fontSize: 'var(--font-size-2xl)',
         fontWeight: 700,
         marginBottom: 'var(--spacing-md)',
         color: 'var(--color-white)',
@@ -71,7 +71,7 @@ const ServicesPage = () => {
     };
 
     const cardDescriptionStyle: CSSProperties = {
-        fontSize: 'clamp(0.95rem, 1.5vw, 1.125rem)',
+        fontSize: 'var(--font-size-base)',
         color: 'var(--color-white-alpha-90)',
         lineHeight: 1.7,
         fontWeight: 400,
@@ -81,7 +81,7 @@ const ServicesPage = () => {
 
     return (
         <div style={pageStyle} data-services-page>
-            <SEO 
+            <SEO
                 title="Hizmetlerimiz"
                 description="KNC Creative'in sunduğu profesyonel hizmetler: Grafik tasarım, video prodüksiyon, kurumsal kimlik, sosyal medya yönetimi, web tasarım ve promosyon ürünleri."
                 canonical="https://knccreative.com/hizmetlerimiz"
@@ -151,14 +151,20 @@ const ServicesPage = () => {
             </style>
 
             <div style={containerStyle} data-services-container>
-                <h1 style={titleStyle} data-services-title>hizmetlerimiz</h1>
+                <h1 style={titleStyle} data-services-title>
+                    hizmetlerimiz
+                </h1>
 
                 <div style={gridStyle} data-services-grid>
                     {servicesData.map((service) => (
                         <div key={service.number} style={cardStyle} data-service-card>
-                            <div style={numberStyle} data-service-number>{service.number}</div>
+                            <div style={numberStyle} data-service-number>
+                                {service.number}
+                            </div>
                             <h2 style={cardTitleStyle}>{service.title}</h2>
-                            <p style={cardDescriptionStyle} data-service-description>{service.description}</p>
+                            <p style={cardDescriptionStyle} data-service-description>
+                                {service.description}
+                            </p>
                         </div>
                     ))}
                 </div>

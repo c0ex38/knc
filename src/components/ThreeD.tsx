@@ -271,7 +271,7 @@ const ThreeD = () => {
     };
 
     const descriptionTextStyle: CSSProperties = {
-        fontSize: '0.9rem', // Made smaller
+        fontSize: 'var(--font-size-lg)',
         color: '#CCCCCC',
         fontWeight: 400,
         lineHeight: 1.6,

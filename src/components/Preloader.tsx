@@ -79,7 +79,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
                     style={{
                         margin: '1rem 0 0',
                         color: '#666',
-                        fontSize: '0.9rem',
+                        fontSize: 'var(--font-size-sm)',
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         fontFamily: 'var(--font-family-base)',
@@ -120,7 +120,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
                     left: '50%',
                     transform: 'translateX(-50%)',
                     color: '#aaaaaa',
-                    fontSize: '0.8rem',
+                    fontSize: 'var(--font-size-xs)',
                     fontFamily: 'var(--font-family-base)',
                     fontVariantNumeric: 'tabular-nums',
                 }}

@@ -10,6 +10,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 
+import Loading from '@/components/Loading';
+
 // Lazy Components
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -44,7 +46,7 @@ function App() {
 
                     <main id="main-content">
                         <ErrorBoundary>
-                            <Suspense fallback={<Preloader onComplete={() => {}} />}>
+                            <Suspense fallback={<Loading />}>
                                 <AnimatePresence mode="wait">
                                     <Routes location={location} key={location.pathname}>
                                         <Route

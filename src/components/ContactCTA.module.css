@@ -86,7 +86,8 @@
     font-size: clamp(50px, 9vw, 130px);
     font-weight: 900;
     color: #fff;
-    line-height: 1.15; /* Increased from 0.9 to fix clipping */
+    line-height: 1.35; /* Increased further to fix 'İ' clipping */
+    padding-top: 0.2em; /* Ensure ascenders aren't cut */
     margin-bottom: 2rem;
     letter-spacing: -0.02em;
 }
@@ -103,7 +104,7 @@
 
 .description {
     font-family: var(--font-family-base);
-    font-size: clamp(18px, 1.5vw, 22px);
+    font-size: var(--font-size-lg);
     color: #b0b0b0;
     font-weight: 300;
     max-width: 650px;
@@ -123,7 +124,7 @@
 
 .linkText {
     font-family: var(--font-family-heading);
-    font-size: 1.5rem;
+    font-size: var(--font-size-2xl);
     font-weight: 700;
     color: #fff;
     letter-spacing: 0.05em;

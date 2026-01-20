@@ -58,7 +58,7 @@ const Services = () => {
                 {/* Wavy Line Divider */}
                 <svg
                     className={styles.divider}
-                    viewBox="0 -1600 1200 2600"
+                    viewBox="-150 -1600 1500 2600"
                     preserveAspectRatio="xMidYMid meet"
                 >
                     <path

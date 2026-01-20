@@ -28,7 +28,7 @@ const Loading = () => {
     };
 
     const textStyle: CSSProperties = {
-        fontSize: '1.125rem',
+        fontSize: 'var(--font-size-lg)',
         fontWeight: 500,
         animation: 'textPulse 1.5s ease-in-out infinite',
         letterSpacing: '0.05em',
