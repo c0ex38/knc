@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import SEO from '../components/SEO';
+import SEO from '../components/layout/SEO';
 import { HelmetProvider } from 'react-helmet-async';
 
 describe('SEO Component', () => {

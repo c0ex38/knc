@@ -1,14 +1,14 @@
 import { Suspense, lazy } from 'react';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Marquee from '../components/Marquee';
-import ContactCTA from '../components/ContactCTA';
-import SEO from '../components/SEO';
-import Loading from '../components/Loading';
+import Hero from '../components/sections/Hero';
+import Services from '../components/sections/Services';
+import Marquee from '../components/sections/Marquee';
+import ContactCTA from '../components/sections/ContactCTA';
+import SEO from '../components/layout/SEO';
+import Loading from '../components/ui/Loading';
 
 // Lazy load heavy components
-const ThreeD = lazy(() => import('../components/ThreeD'));
-const GoogleMap = lazy(() => import('../components/GoogleMap'));
+const ThreeD = lazy(() => import('../components/sections/ThreeD'));
+const GoogleMap = lazy(() => import('../components/sections/GoogleMap'));
 
 const Home = () => {
     return (

@@ -100,10 +100,29 @@ const Marquee = () => {
                 <div style={containerStyle}>
                     {/* Beyaz daire desenli şerit (ters yön) */}
                     <div style={stripeWhiteStyle}>
-                        <svg className="stripe-pattern-white" width="100%" height="100%" preserveAspectRatio="none">
+                        <svg
+                            className="stripe-pattern-white"
+                            width="100%"
+                            height="100%"
+                            preserveAspectRatio="none"
+                        >
                             <defs>
-                                <pattern id="circles-white" x="0" y="0" width="60" height="50" patternUnits="userSpaceOnUse">
-                                    <circle cx="30" cy="25" r="20" fill="none" stroke="white" strokeWidth="8" />
+                                <pattern
+                                    id="circles-white"
+                                    x="0"
+                                    y="0"
+                                    width="60"
+                                    height="50"
+                                    patternUnits="userSpaceOnUse"
+                                >
+                                    <circle
+                                        cx="30"
+                                        cy="25"
+                                        r="20"
+                                        fill="none"
+                                        stroke="white"
+                                        strokeWidth="8"
+                                    />
                                     <circle cx="30" cy="25" r="7" fill="white" />
                                 </pattern>
                             </defs>
@@ -113,10 +132,29 @@ const Marquee = () => {
 
                     {/* Turuncu zemin üzerinde beyaz daire desenli şerit */}
                     <div style={stripeStyle}>
-                        <svg className="stripe-pattern" width="100%" height="100%" preserveAspectRatio="none">
+                        <svg
+                            className="stripe-pattern"
+                            width="100%"
+                            height="100%"
+                            preserveAspectRatio="none"
+                        >
                             <defs>
-                                <pattern id="circles" x="0" y="0" width="60" height="50" patternUnits="userSpaceOnUse">
-                                    <circle cx="30" cy="25" r="20" fill="none" stroke="white" strokeWidth="8" />
+                                <pattern
+                                    id="circles"
+                                    x="0"
+                                    y="0"
+                                    width="60"
+                                    height="50"
+                                    patternUnits="userSpaceOnUse"
+                                >
+                                    <circle
+                                        cx="30"
+                                        cy="25"
+                                        r="20"
+                                        fill="none"
+                                        stroke="white"
+                                        strokeWidth="8"
+                                    />
                                     <circle cx="30" cy="25" r="7" fill="white" />
                                 </pattern>
                             </defs>
@@ -130,5 +168,3 @@ const Marquee = () => {
 };
 
 export default Marquee;
-
-

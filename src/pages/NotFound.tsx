@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { type CSSProperties } from 'react';
-import SEO from '../components/SEO';
+import SEO from '../components/layout/SEO';
 
 /**
  * NotFound (404) Sayfası

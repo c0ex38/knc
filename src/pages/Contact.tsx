@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import SEO from '../components/layout/SEO';
 import { contactInfo } from '../constants';
 import styles from './Contact.module.css';
 

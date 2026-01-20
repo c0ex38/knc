@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { heroText } from '../constants';
+import { heroText } from '../../constants';
 import styles from './Hero.module.css';
 
 /**

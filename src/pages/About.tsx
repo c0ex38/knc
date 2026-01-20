@@ -1,5 +1,5 @@
 import { type CSSProperties } from 'react';
-import SEO from '../components/SEO';
+import SEO from '../components/layout/SEO';
 
 /**
  * About (Hakkımızda) Sayfası

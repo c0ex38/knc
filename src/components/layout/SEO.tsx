@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { contactInfo } from '../constants';
+import { contactInfo } from '../../constants';
 
 /**
  * SEO Bileşeni - Advanced

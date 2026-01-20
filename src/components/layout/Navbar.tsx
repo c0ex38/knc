@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
+import Logo from '../ui/Logo';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {

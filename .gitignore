@@ -53,3 +53,8 @@ coverage
 
 *storybook.log
 storybook-static
+
+
+.agent/
+.agent
+.agent/*

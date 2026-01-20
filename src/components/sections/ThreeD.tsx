@@ -1,5 +1,19 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
-import * as THREE from 'three';
+import {
+    Scene,
+    PerspectiveCamera,
+    WebGLRenderer,
+    Shape,
+    Path,
+    ExtrudeGeometry,
+    MeshPhongMaterial,
+    MeshBasicMaterial,
+    Mesh,
+    Group,
+    PointLight,
+    AmbientLight,
+    DoubleSide,
+} from 'three';
 
 /**
  * ThreeD Bileşeni
@@ -17,14 +31,14 @@ const ThreeD = () => {
         }
 
         // Scene setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(
+        const scene = new Scene();
+        const camera = new PerspectiveCamera(
             75,
             canvasRef.current.clientWidth / canvasRef.current.clientHeight,
             0.1,
             1000
         );
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        const renderer = new WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(canvasRef.current.clientWidth, canvasRef.current.clientHeight);
         canvasRef.current.appendChild(renderer.domElement);
 
@@ -32,10 +46,10 @@ const ThreeD = () => {
         const outerRadius = 10;
         const innerRadius = 7;
 
-        const arcShape = new THREE.Shape();
+        const arcShape = new Shape();
         arcShape.absarc(0, 0, outerRadius, 0, Math.PI * 2, false);
 
-        const holePath = new THREE.Path();
+        const holePath = new Path();
         holePath.absarc(0, 0, innerRadius, 0, Math.PI * 2, true);
         arcShape.holes.push(holePath);
 
@@ -47,51 +61,51 @@ const ThreeD = () => {
             curveSegments: 64,
         };
 
-        const geometry = new THREE.ExtrudeGeometry(arcShape, extrudeSettings);
+        const geometry = new ExtrudeGeometry(arcShape, extrudeSettings);
         geometry.computeVertexNormals();
 
         // Malzeme
-        const material = new THREE.MeshPhongMaterial({
+        const material = new MeshPhongMaterial({
             color: 0xffffff,
             shininess: 100,
             flatShading: false,
-            side: THREE.DoubleSide,
+            side: DoubleSide,
         });
 
-        const ring = new THREE.Mesh(geometry, material);
+        const ring = new Mesh(geometry, material);
 
         // İç Dolu Disk
-        const innerDiskShape = new THREE.Shape();
+        const innerDiskShape = new Shape();
         innerDiskShape.absarc(0, 0, innerRadius - 4, 0, Math.PI * 2, false);
 
-        const innerDiskGeometry = new THREE.ExtrudeGeometry(innerDiskShape, extrudeSettings);
+        const innerDiskGeometry = new ExtrudeGeometry(innerDiskShape, extrudeSettings);
         innerDiskGeometry.computeVertexNormals();
 
-        const innerDiskMaterial = new THREE.MeshBasicMaterial({
+        const innerDiskMaterial = new MeshBasicMaterial({
             color: 0xff2700,
-            side: THREE.DoubleSide,
+            side: DoubleSide,
         });
 
-        const innerDisk = new THREE.Mesh(innerDiskGeometry, innerDiskMaterial);
+        const innerDisk = new Mesh(innerDiskGeometry, innerDiskMaterial);
         // İç diski hafifçe öne çek (z-fighting önleme)
         innerDisk.position.z = 0.01;
 
         // Group
-        const ringGroup = new THREE.Group();
+        const ringGroup = new Group();
         ringGroup.add(ring);
         ringGroup.add(innerDisk);
         scene.add(ringGroup);
 
         // Işıklandırma
-        const light1 = new THREE.PointLight(0xffffff, 500);
+        const light1 = new PointLight(0xffffff, 500);
         light1.position.set(10, 10, 15);
         scene.add(light1);
 
-        const light2 = new THREE.PointLight(0xffffff, 250);
+        const light2 = new PointLight(0xffffff, 250);
         light2.position.set(-10, -10, 10);
         scene.add(light2);
 
-        scene.add(new THREE.AmbientLight(0x404040, 2));
+        scene.add(new AmbientLight(0x404040, 2));
 
         camera.position.z = 25;
 
@@ -360,6 +374,9 @@ const ThreeD = () => {
                         }
                         [data-threed-canvas] {
                             height: 400px !important;
+                        }
+                        .threed__scroll-content {
+                            min-height: 150vh !important; /* Reduced from 300vh default */
                         }
                     }
                 `}

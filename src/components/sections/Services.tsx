@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { servicesData } from '../constants';
-import type { ServiceItemProps } from '../types';
+import { useState, useEffect, useRef } from 'react';
+import { servicesData } from '../../constants';
+import type { ServiceItemProps } from '../../types';
 import styles from './Services.module.css';
 
 /**
@@ -46,6 +46,19 @@ const Services = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <section className={styles.section} id="services" ref={sectionRef}>
             <div className={styles.container}>
@@ -71,7 +84,7 @@ const Services = () => {
                     />
                     <g className="service-items">
                         {servicesData.map((service, index) => (
-                            <ServiceItem key={index} {...service} />
+                            <ServiceItem key={index} {...service} isMobile={isMobile} />
                         ))}
                     </g>
                 </svg>
@@ -81,6 +94,10 @@ const Services = () => {
 };
 
 // Helper component for SVG text group
+interface ExtendedServiceItemProps extends ServiceItemProps {
+    isMobile: boolean;
+}
+
 const ServiceItem = ({
     number,
     title,
@@ -90,15 +107,21 @@ const ServiceItem = ({
     x,
     y,
     align = 'right',
-}: ServiceItemProps) => {
+    isMobile,
+}: ExtendedServiceItemProps) => {
     const isRight = align === 'right';
+    // Mobile spacing needs to be much larger because we are increasing font size significantly
+    // to separate lines visually in the scaled-down SVG
+    const titleOffset = isMobile ? -80 : -50;
+    const lineSpacing = isMobile ? 60 : 25;
+    const numberY = isMobile ? 80 : 50;
 
     return (
         <g transform={`translate(${x}, ${y})`}>
             {/* Number Background */}
             <text
                 x={isRight ? '250' : '-250'}
-                y="50"
+                y={numberY}
                 className={styles.numberText}
                 textAnchor={isRight ? 'start' : 'end'}
             >
@@ -108,7 +131,7 @@ const ServiceItem = ({
             {/* Title */}
             <text
                 x={isRight ? '300' : '-300'}
-                y="-50"
+                y={titleOffset}
                 className={styles.titleText}
                 textAnchor={isRight ? 'end' : 'start'}
             >
@@ -128,7 +151,7 @@ const ServiceItem = ({
             {/* Description Line 2 */}
             <text
                 x={isRight ? '300' : '-300'}
-                y="25"
+                y={lineSpacing}
                 className={styles.descText}
                 textAnchor={isRight ? 'end' : 'start'}
             >
@@ -139,7 +162,7 @@ const ServiceItem = ({
             {desc3 && (
                 <text
                     x={isRight ? '-200' : '-300'}
-                    y="50"
+                    y={lineSpacing * 2}
                     className={styles.descText}
                     textAnchor={isRight ? 'end' : 'start'}
                 >

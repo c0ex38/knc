@@ -3,13 +3,11 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
-import storybook from 'eslint-plugin-storybook';
 import react from 'eslint-plugin-react';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 export default tseslint.config(
-  { ignores: ['dist', 'storybook-static'] },
-  ...storybook.configs['flat/recommended'],
+  { ignores: ['dist'] },
   {
     extends: [
       js.configs.recommended,
@@ -45,7 +43,6 @@ export default tseslint.config(
       'react/react-in-jsx-scope': 'off', // Not needed in Vite/Next
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      'storybook/no-renderer-packages': 'off',
     },
   },
 );

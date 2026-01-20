@@ -37,6 +37,7 @@ export default defineConfig({
         }),
     ],
     build: {
+        minify: 'esbuild',
         rollupOptions: {
             output: {
                 manualChunks: {
@@ -52,5 +53,8 @@ export default defineConfig({
             },
         },
         chunkSizeWarningLimit: 1000,
+    },
+    esbuild: {
+        drop: ['console', 'debugger'],
     },
 });

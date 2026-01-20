@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import SEO from '../components/SEO';
+import SEO from '../components/layout/SEO';
 import styles from './StyleGuide.module.css';
 import { slideUp, scaleUp } from '../utils/animations';
 

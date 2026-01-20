@@ -4,13 +4,13 @@ import { AnimatePresence } from 'framer-motion';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 
-import ErrorBoundary from '@/components/ErrorBoundary';
-import Preloader from '@/components/Preloader';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import PageTransition from '@/components/PageTransition';
+import ErrorBoundary from '@/components/shared/ErrorBoundary';
+import Preloader from '@/components/shared/Preloader';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import PageTransition from '@/components/ui/PageTransition';
 
-import Loading from '@/components/Loading';
+import Loading from '@/components/ui/Loading';
 
 // Lazy Components
 const Home = lazy(() => import('@/pages/Home'));
@@ -21,7 +21,7 @@ const Contact = lazy(() => import('@/pages/Contact'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const StyleGuide = lazy(() => import('@/pages/StyleGuide')); // New Route
 
-import ScrollToTop from '@/components/ScrollToTop';
+import ScrollToTop from '@/components/shared/ScrollToTop';
 
 function App() {
     const location = useLocation();

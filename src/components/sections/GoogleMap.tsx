@@ -1,7 +1,6 @@
-import React from 'react';
-import Logo from './Logo';
+import Logo from '../ui/Logo';
 
-const GoogleMap: React.FC = () => {
+const GoogleMap = () => {
     const containerStyle: React.CSSProperties = {
         width: '100%',
         height: '600px',

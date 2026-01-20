@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import type { PreloaderProps } from '../types';
+import type { PreloaderProps } from '../../types';
 
 const Preloader = ({ onComplete }: PreloaderProps) => {
     const [progress, setProgress] = useState(0);
