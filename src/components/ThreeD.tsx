@@ -234,11 +234,11 @@ const ThreeD = () => {
         maxWidth: '1600px',
         width: '100%',
         margin: '0 auto',
-        padding: '15vh 2rem 0', // Added top padding, removed vertical centering gap
+        padding: '0 2rem', // Removed top padding
         display: 'grid',
         gridTemplateColumns: '45% 55%', // Text slightly narrower to bring canvas closer
         gap: '2rem', // Reduced gap significantly from 8rem
-        alignItems: 'start', // Changed from center to start
+        alignItems: 'center', // Changed back to center
     };
 
     const contentStyle: CSSProperties = {
@@ -251,7 +251,7 @@ const ThreeD = () => {
     };
 
     const bigTextStyle: CSSProperties = {
-        fontSize: 'clamp(200px, 30vw, 550px)', // Made larger
+        fontSize: 'clamp(100px, 20vw, 350px)', // Made even smaller
         fontWeight: 900,
         color: '#FFFFFF',
         letterSpacing: '-0.02em',
@@ -262,29 +262,29 @@ const ThreeD = () => {
     };
 
     const subTitleStyle: CSSProperties = {
-        fontSize: 'clamp(30px, 4vw, 60px)', // Made smaller
+        fontSize: 'clamp(24px, 3.5vw, 50px)', // Made smaller
         fontWeight: 900,
         color: '#FFFFFF',
-        marginTop: '1rem',
+        marginTop: '0.5rem', // Reduced margin
         textTransform: 'lowercase',
         letterSpacing: '0.05em',
         lineHeight: 1,
     };
 
     const descriptionContainerStyle: CSSProperties = {
-        marginTop: '2rem',
+        marginTop: '1.5rem', // Reduced margin
         maxWidth: '500px', // Slightly narrower for better reading
         display: 'flex',
         flexDirection: 'column',
-        gap: '1rem',
+        gap: '0.8rem', // Reduced gap
         textAlign: 'left', // Changed to left alignment
     };
 
     const descriptionTextStyle: CSSProperties = {
-        fontSize: 'var(--font-size-lg)',
+        fontSize: 'var(--font-size-base)', // Reduced to base size if lg is too big, or keep lg but tighter line height
         color: '#CCCCCC',
         fontWeight: 400,
-        lineHeight: 1.6,
+        lineHeight: 1.5,
     };
 
     const numberContainerStyle: CSSProperties = {

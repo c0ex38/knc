@@ -7,6 +7,7 @@ const GoogleMap: React.FC = () => {
         height: '600px',
         overflow: 'hidden',
         position: 'relative',
+        zIndex: 2, // Ensure it stacks on top of previous fixed/sticky elements
     };
 
     const iframeStyle: React.CSSProperties = {
@@ -83,16 +84,14 @@ const GoogleMap: React.FC = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="KNC Creative Konum"
             />
-            
+
             {/* Custom Marker Overlay */}
             <div style={markerContainerStyle}>
                 <div style={markerCardStyle}>
                     <div style={logoContainerStyle}>
                         <Logo />
                     </div>
-                    <div style={textStyle}>
-                        KNC CREATIVE
-                    </div>
+                    <div style={textStyle}>KNC CREATIVE</div>
                 </div>
                 <div style={pinStyle}></div>
                 <div style={pinDotStyle}></div>
