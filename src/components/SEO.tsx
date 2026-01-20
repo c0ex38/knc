@@ -159,6 +159,9 @@ const SEO = ({
             <meta name="revisit-after" content="7 days" />
             <meta name="rating" content="General" />
 
+            {/* Google Search Console Verification */}
+            <meta name="google-site-verification" content={contactInfo.googleVerification} />
+
             {/* 3. Canonical */}
             <link rel="canonical" href={fullUrl} />
 

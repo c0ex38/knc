@@ -160,46 +160,56 @@ const ThreeD = () => {
 
     // Separate useEffect for scroll animation
     useEffect(() => {
-        // Scroll handler for number animation (based on window scroll)
-        const handleScroll = () => {
+        let ticking = false;
+
+        const updateScroll = () => {
             const section = document.querySelector('.threed__scroll-content');
-            if (!section || !(section instanceof HTMLElement)) return;
+            if (!section || !(section instanceof HTMLElement)) {
+                ticking = false;
+                return;
+            }
 
             const rect = section.getBoundingClientRect();
             const sectionTop = rect.top;
             const sectionHeight = rect.height;
             const windowHeight = window.innerHeight;
 
-            // Calculate scroll progress within the section
-            // scrollProgress goes from 0 (section entering viewport) to 1 (section leaving viewport)
             const scrollStart = windowHeight;
             const scrollEnd = -sectionHeight + windowHeight;
             const scrollRange = scrollStart - scrollEnd;
             const currentScroll = sectionTop;
 
-            // Normalize to 0-1 range
             const scrollProgress = Math.max(
                 0,
                 Math.min(1, (scrollStart - currentScroll) / scrollRange)
             );
 
             const wrapper = document.getElementById('numbersWrapper');
-            if (!wrapper) return;
+            if (wrapper) {
+                if (scrollProgress < 0.3) {
+                    wrapper.style.transform = 'translateY(0%)';
+                } else if (scrollProgress > 0.7) {
+                    wrapper.style.transform = 'translateY(-50%)';
+                } else {
+                    const transition = (scrollProgress - 0.3) / 0.4;
+                    const movePercent = transition * 50;
+                    wrapper.style.transform = `translateY(-${movePercent}%)`;
+                }
+            }
 
-            // Smooth transition: animate between 0.3 and 0.7 of scroll progress
-            if (scrollProgress < 0.3) {
-                wrapper.style.transform = 'translateY(0%)';
-            } else if (scrollProgress > 0.7) {
-                wrapper.style.transform = 'translateY(-50%)';
-            } else {
-                const transition = (scrollProgress - 0.3) / 0.4;
-                const movePercent = transition * 50;
-                wrapper.style.transform = `translateY(-${movePercent}%)`;
+            ticking = false;
+        };
+
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateScroll);
+                ticking = true;
             }
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Initial call
+        // Initial call
+        handleScroll();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);

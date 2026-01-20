@@ -46,6 +46,7 @@ const Contact = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.card}
+                                aria-label="Instagram sayfamızı yeni sekmede aç"
                             >
                                 <div className={styles.cardIcon}>
                                     <i className="fa-brands fa-instagram"></i>
@@ -59,6 +60,7 @@ const Contact = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.card}
+                                aria-label="Konumumuzu Google Haritalar'da yeni sekmede aç"
                             >
                                 <div className={styles.cardIcon}>
                                     <svg
@@ -84,6 +86,7 @@ const Contact = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.card}
+                                aria-label="WhatsApp üzerinden bizimle iletişime geçin (Yeni sekmede açılır)"
                             >
                                 <div className={styles.cardIcon}>
                                     <i className="fa-brands fa-whatsapp"></i>

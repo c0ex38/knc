@@ -77,6 +77,7 @@ export const contactInfo = {
     instagram: 'https://instagram.com/knccreative_',
     whatsappLink: 'https://wa.me/905526360142',
     address: 'Fevziçakmak, 10453. Sk. No:16/B, 42050 Karatay/Konya',
+    googleVerification: 'bhMnSGeLMs67W4MjvxywgSiKnvotKDok85iSF4iRP4k',
 } satisfies ContactInfo;
 
 export const heroText = {

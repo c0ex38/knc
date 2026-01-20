@@ -27,6 +27,7 @@ export interface ContactInfo {
     readonly instagram: string;
     readonly whatsappLink: string;
     readonly address: string;
+    readonly googleVerification?: string;
 }
 
 /**
