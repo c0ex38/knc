@@ -63,7 +63,7 @@ const Navbar = () => {
                 )}
 
                 {/* Logo */}
-                <Link to="/" className={styles.logo}>
+                <Link to="/" className={styles.logo} aria-label="Ana Sayfa">
                     <Logo />
                 </Link>
 
